@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="big-data-api" />
+        <module name="big-data-track-javasdk" />
+        <module name="big-data-track-jssdk" />
+        <module name="big-data-transformer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="big-data" target="1.7" />
+      <module name="big-data-api" target="1.7" />
+      <module name="big-data-track-javasdk" target="1.8" />
+      <module name="big-data-track-jssdk" target="1.7" />
+      <module name="big-data-transformer" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

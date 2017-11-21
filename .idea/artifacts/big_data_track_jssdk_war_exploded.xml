@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="big-data-track-jssdk:war exploded">
+    <output-path>$PROJECT_DIR$/big-data-track-jssdk/target/big-data-track-jssdk-1.0-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="big-data-track-jssdk" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/big-data-track-jssdk/target/big-data-track-jssdk-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="big-data-track-jssdk/web/Web" />
+    </root>
+  </artifact>
+</component>

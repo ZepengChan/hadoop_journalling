@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/big-data.iml" filepath="$PROJECT_DIR$/big-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/big-data-api/big-data-api.iml" filepath="$PROJECT_DIR$/big-data-api/big-data-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/big-data-track-javasdk/big-data-track-javasdk.iml" filepath="$PROJECT_DIR$/big-data-track-javasdk/big-data-track-javasdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/big-data-track-jssdk/big-data-track-jssdk.iml" filepath="$PROJECT_DIR$/big-data-track-jssdk/big-data-track-jssdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/big-data-transformer/big-data-transformer.iml" filepath="$PROJECT_DIR$/big-data-transformer/big-data-transformer.iml" />
+    </modules>
+  </component>
+</project>
