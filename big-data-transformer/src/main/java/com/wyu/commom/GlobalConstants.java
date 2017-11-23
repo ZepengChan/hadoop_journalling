@@ -6,6 +6,11 @@ package com.wyu.commom;
  * @author gerry
  */
 public class GlobalConstants {
+
+    /**
+     * 一天的毫秒数
+     */
+    public static final int DAY_OF_MILLISECONDS = 86400000;
     /**
      * 定义的运行时间变量名
      */

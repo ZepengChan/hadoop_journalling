@@ -5,6 +5,7 @@ import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.service.IDimensionConverter;
 import org.apache.hadoop.conf.Configuration;
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -22,6 +23,7 @@ public interface IOutputCollector {
      * @param psmt
      * @param converter
      * @throws SQLException
+     * @throws IOException
      */
-    void collect(Configuration conf, BaseDimension key, BaseStatsValueWritable value, PreparedStatement psmt, IDimensionConverter converter) throws SQLException;
+    void collect(Configuration conf, BaseDimension key, BaseStatsValueWritable value, PreparedStatement psmt, IDimensionConverter converter) throws SQLException,IOException;
 }

@@ -5,7 +5,8 @@ package com.wyu.commom;
  * @author ken
  */
 public enum KpiType {
-    NEW_INSTALL_USER("new_install_user");
+    NEW_INSTALL_USER("new_install_user"),
+    BROWSER_NEW_INSTALL_USER("browser_new_install_user");
 
     public final String name;
 

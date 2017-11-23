@@ -1,5 +1,6 @@
 package com.wyu.transformer.service.impl;
 
+import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.BaseDimension;
 import com.wyu.transformer.model.dim.base.BrowserDimension;
 import com.wyu.transformer.model.dim.base.DateDimension;
@@ -17,9 +18,10 @@ public class DimensionConverterImpl implements IDimensionConverter {
 
     private static final Logger logger = Logger.getLogger(DimensionConverterImpl.class);
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc://192.168.123.107:3306/report?useUnicode=true&characterEncoding=Utf8";
+    private static final String URL = "jdbc:mysql://192.168.123.107:3306/report";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
+    private static final long serialVersionUID = 8894507016522723685L;
     static {
         try {
             Class.forName(DRIVER);
@@ -122,11 +124,11 @@ public class DimensionConverterImpl implements IDimensionConverter {
             DateDimension date = (DateDimension) dimension;
             psmt.setInt(++i, date.getYear());
             psmt.setInt(++i, date.getSeason());
-            psmt.setInt(++i, date.getMonth());
+            psmt.setInt(++i, date.getMonth()+1);
             psmt.setInt(++i, date.getWeek());
             psmt.setInt(++i, date.getDay());
             psmt.setString(++i, date.getType());
-            psmt.setDate(++i, new Date(date.getCalendar().getTime()));
+            psmt.setDate(++i, new Date(date.getCalendar().getTime()+GlobalConstants.DAY_OF_MILLISECONDS));
         } else if (dimension instanceof PlatFormDimension) {
             PlatFormDimension platForm = (PlatFormDimension) dimension;
             psmt.setString(++i, platForm.getPlatformName());
@@ -143,8 +145,8 @@ public class DimensionConverterImpl implements IDimensionConverter {
      * @return
      */
     private String[] buildDateSql() {
-        String querySql = " select 'id' from 'dimension_date' where 'year'= ? and 'season' = ? and 'month' = ? and 'week' = ? and 'day' = ? and 'type' = ? and 'calendar' = ? ";
-        String insertSql = " insert into 'dimension_date'('year','season','month','week','day','type','calendar') values(?,?,?,?,?,?,?) ";
+        String querySql = "SELECT `id` FROM `dimension_date` WHERE `year` = ? AND `season` = ? AND `month` = ? AND `week` = ? AND `day` = ? AND `type` = ? AND `calendar` = ?";
+        String insertSql = "INSERT INTO `dimension_date`(`year`, `season`, `month`, `week`, `day`, `type`, `calendar`) VALUES(?, ?, ?, ?, ?, ?, ?)";
         return new String[]{querySql, insertSql};
     }
 
@@ -154,8 +156,8 @@ public class DimensionConverterImpl implements IDimensionConverter {
      * @return
      */
     private String[] buildPlatformSql() {
-        String querySql = " select 'id' from 'dimension_platform' where 'platform_name'= ? ";
-        String insertSql = " insert into 'dimension_platform'('platform_name') values(?) ";
+        String querySql = "SELECT `id` FROM `dimension_platform` WHERE `platform_name` = ?";
+        String insertSql = "INSERT INTO `dimension_platform`(`platform_name`) VALUES(?)";
         return new String[]{querySql, insertSql};
     }
 
@@ -165,8 +167,8 @@ public class DimensionConverterImpl implements IDimensionConverter {
      * @return
      */
     private String[] buildBrowserSql() {
-        String querySql = " select 'id' from 'dimension_browser' where 'browser_name'= ? and 'browser_version' = ? ";
-        String insertSql = " insert into 'dimension_browser'('platform_name','browser_version') values(?,?) ";
+        String querySql = "SELECT `id` FROM `dimension_browser` WHERE `browser_name` = ? AND `browser_version` = ?";
+        String insertSql = "INSERT INTO `dimension_browser`(`browser_name`, `browser_version`) VALUES(?, ?)";
         return new String[]{querySql, insertSql};
     }
 

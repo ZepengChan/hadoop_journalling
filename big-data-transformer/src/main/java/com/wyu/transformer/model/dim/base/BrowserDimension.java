@@ -47,9 +47,13 @@ public class BrowserDimension extends BaseDimension {
         return browserDimension;
     }
 
+    public void clean(){
+        this.id = 0;
+        this.browserName = "";
+        this.browserVersion = "";
+    }
 
-
-    public static List<BaseDimension> buildList(String browserName, String browserVersion) {
+    public static List<BrowserDimension> buildList(String browserName, String browserVersion) {
         List<BrowserDimension> list = new ArrayList<>();
         if (StringUtils.isBlank(browserName)) {
             browserName = GlobalConstants.DEFAULT_VALUE;
@@ -58,10 +62,9 @@ public class BrowserDimension extends BaseDimension {
         if (StringUtils.isBlank(browserVersion)) {
             browserVersion = GlobalConstants.DEFAULT_VALUE;
         }
-//        list.add(BrowserDimension.newInstance(GlobalConstants.VALUE_OF_ALL,GlobalConstants.VALUE_OF_ALL));
         list.add(BrowserDimension.newInstance(browserName, GlobalConstants.VALUE_OF_ALL));
         list.add(BrowserDimension.newInstance(browserName, browserVersion));
-        return null;
+        return list;
     }
 
     public int getId() {

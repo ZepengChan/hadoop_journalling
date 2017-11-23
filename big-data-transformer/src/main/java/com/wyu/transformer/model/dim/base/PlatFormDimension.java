@@ -37,7 +37,7 @@ public class PlatFormDimension extends BaseDimension {
             platformName = GlobalConstants.DEFAULT_VALUE;
         }
         List<PlatFormDimension> list = new ArrayList<>();
-        list.add(new PlatFormDimension((GlobalConstants.DEFAULT_VALUE)));
+//        list.add(new PlatFormDimension((GlobalConstants.DEFAULT_VALUE)));
         list.add(new PlatFormDimension(platformName));
         return list;
     }

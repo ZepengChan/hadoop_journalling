@@ -12,7 +12,7 @@
         <module name="big-data-transformer" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
       <module name="big-data" target="1.7" />
       <module name="big-data-api" target="1.7" />
       <module name="big-data-track-javasdk" target="1.8" />
