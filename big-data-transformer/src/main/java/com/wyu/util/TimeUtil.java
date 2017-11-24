@@ -2,7 +2,6 @@ package com.wyu.util;
 
 import com.wyu.commom.DateEnum;
 import org.apache.commons.lang.StringUtils;
-import org.apache.hadoop.hdfs.tools.CacheAdmin;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -161,7 +160,7 @@ public class TimeUtil {
             }
             return month / 3 + 1;
         } else if (DateEnum.MONTH.equals(type)) {
-            return calendar.get(Calendar.MONTH);
+            return calendar.get(Calendar.MONTH)+1;
         } else if (DateEnum.WEEK.equals(type)) {
             return calendar.get(Calendar.WEEK_OF_YEAR);
         } else if (DateEnum.DAY.equals(type)) {

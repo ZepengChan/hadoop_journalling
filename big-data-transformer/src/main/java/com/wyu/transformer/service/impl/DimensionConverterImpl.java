@@ -1,6 +1,5 @@
 package com.wyu.transformer.service.impl;
 
-import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.BaseDimension;
 import com.wyu.transformer.model.dim.base.BrowserDimension;
 import com.wyu.transformer.model.dim.base.DateDimension;
@@ -128,7 +127,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
             psmt.setInt(++i, date.getWeek());
             psmt.setInt(++i, date.getDay());
             psmt.setString(++i, date.getType());
-            psmt.setDate(++i, new Date(date.getCalendar().getTime()+GlobalConstants.DAY_OF_MILLISECONDS));
+            psmt.setDate(++i, new Date(date.getCalendar().getTime()));
         } else if (dimension instanceof PlatFormDimension) {
             PlatFormDimension platForm = (PlatFormDimension) dimension;
             psmt.setString(++i, platForm.getPlatformName());

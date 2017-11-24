@@ -64,8 +64,8 @@ public class TransformerOutputFormat extends OutputFormat<BaseDimension, BaseSta
         private Connection conn = null;
         private Configuration conf = null;
         private IDimensionConverter converter = null;
-        private Map<KpiType, PreparedStatement> map = new HashMap<KpiType, PreparedStatement>();
-        private Map<KpiType, Integer> batch = new HashMap<KpiType, Integer>();
+        private Map<KpiType, PreparedStatement> map = new HashMap<>();
+        private Map<KpiType, Integer> batch = new HashMap<>();
 
         public TransformerRecordWriter(Connection conn, Configuration conf, IDimensionConverter converter) {
             super();
@@ -135,12 +135,13 @@ public class TransformerOutputFormat extends OutputFormat<BaseDimension, BaseSta
                             // nothing
                         }
                     }
-                    if (conn != null)
+                    if (conn != null) {
                         try {
                             conn.close();
                         } catch (Exception e) {
                             // nothing
                         }
+                    }
                 }
             }
         }
