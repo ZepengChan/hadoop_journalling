@@ -14,15 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14ca7e5f-d1ac-4969-b349-436734af0497" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserBrowserCollector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserCollector.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserReducer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserRunner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/KpiType.java" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/KpiType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big-data-transformer/src/main/resources/output-collector.xml" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/resources/output-collector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big-data-transformer/src/main/resources/query-mapping.xml" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/resources/query-mapping.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/big-data-track-jssdk/target/" />
     <ignored path="$PROJECT_DIR$/big-data-track-javasdk/target/" />
@@ -145,8 +137,8 @@
       <file leaf-file-name="ActiveUserCollector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserCollector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="782">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -773,7 +765,7 @@
       <workItem from="1511407994057" duration="12732000" />
       <workItem from="1511496411844" duration="4544000" />
       <workItem from="1511516560507" duration="759000" />
-      <workItem from="1511666770224" duration="6845000" />
+      <workItem from="1511666770224" duration="7100000" />
     </task>
     <task id="LOCAL-00001" summary="新用户分析(已完成)">
       <created>1511447366530</created>
@@ -789,7 +781,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511516711796</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="活跃用户(测试)">
+      <created>1511697655489</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1511697655490</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -825,7 +824,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132935000" />
+    <option name="totallyTimeSpent" value="133190000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -843,7 +842,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5021322" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3273743" sideWeight="0.5021322" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -851,7 +850,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="725" y="212" width="469" height="615" />
@@ -886,7 +885,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="新用户分析(已完成)" />
     <MESSAGE value="总用户(测试)" />
-    <option name="LAST_COMMIT_MESSAGE" value="总用户(测试)" />
+    <MESSAGE value="活跃用户(测试)" />
+    <option name="LAST_COMMIT_MESSAGE" value="活跃用户(测试)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1307,8 +1307,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="782">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
