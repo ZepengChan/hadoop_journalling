@@ -14,7 +14,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14ca7e5f-d1ac-4969-b349-436734af0497" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-api/src/test/java/com/wyu/test/package-info.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big-data-api/src/main/resources/conf/applicationContext-service.xml" afterPath="$PROJECT_DIR$/big-data-api/src/main/resources/conf/applicationContext-service.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big-data-transformer/src/main/resources/core-site.xml" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/resources/core-site.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/big-data-transformer/src/main/resources/hbase-site.xml" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/resources/hbase-site.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/big-data-track-jssdk/target/" />
     <ignored path="$PROJECT_DIR$/big-data-track-javasdk/target/" />
@@ -48,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserRunner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-9">
-              <caret line="278" column="30" lean-forward="true" selection-start-line="278" selection-start-column="30" selection-end-line="278" selection-end-column="30" />
+              <caret line="278" column="30" lean-forward="false" selection-start-line="278" selection-start-column="30" selection-end-line="278" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1511516627334" expanded="true" signature="4333:4479" ph="SELECT `id` dimension_date" />
@@ -80,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserReducer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserRunner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1150">
-              <caret line="62" column="64" lean-forward="true" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
+              <caret line="62" column="64" lean-forward="false" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2479#2480#0" expanded="true" />
@@ -138,7 +141,7 @@
         <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserCollector.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="782">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -765,7 +768,7 @@
       <workItem from="1511407994057" duration="12732000" />
       <workItem from="1511496411844" duration="4544000" />
       <workItem from="1511516560507" duration="759000" />
-      <workItem from="1511666770224" duration="7100000" />
+      <workItem from="1511666770224" duration="7346000" />
     </task>
     <task id="LOCAL-00001" summary="新用户分析(已完成)">
       <created>1511447366530</created>
@@ -824,7 +827,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133190000" />
+    <option name="totallyTimeSpent" value="133436000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1205,7 +1208,7 @@
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserReducer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1215,7 +1218,7 @@
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
-          <caret line="278" column="30" lean-forward="true" selection-start-line="278" selection-start-column="30" selection-end-line="278" selection-end-column="30" />
+          <caret line="278" column="30" lean-forward="false" selection-start-line="278" selection-start-column="30" selection-end-line="278" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1511516627334" expanded="true" signature="4333:4479" ph="SELECT `id` dimension_date" />
@@ -1270,7 +1273,7 @@
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1150">
-          <caret line="62" column="64" lean-forward="true" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
+          <caret line="62" column="64" lean-forward="false" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2479#2480#0" expanded="true" />
@@ -1308,7 +1311,7 @@
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserCollector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

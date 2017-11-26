@@ -5,7 +5,7 @@
 
 	<property>
 		<name>fs.defaultFS</name>
-		<value>hdfs://s136:8020</value>
+		<value>hdfs://hh:8020</value>
 	</property>
 
 	<!-- local submit job need those config -->
