@@ -61,7 +61,15 @@ public class ActiveUserRunner implements Tool {
         job.setOutputKeyClass(StatsUserDimension.class);
         job.setOutputValueClass(MapWritableValue.class);
         job.setOutputFormatClass(TransformerOutputFormat.class);
-        return job.waitForCompletion(true)? 0 : -1;
+        // 开始毫秒数
+        long startTime = System.currentTimeMillis();
+        try {
+            return job.waitForCompletion(true) ? 0 : -1;
+        } finally {
+            // 结束的毫秒数
+            long endTime = System.currentTimeMillis();
+            logger.info("Job<" + job.getJobName() + ">是否执行成功:" + job.isSuccessful() + "; 开始时间:" + startTime + "; 结束时间:" + endTime + "; 用时:" + (endTime - startTime) + "ms");
+        }
     }
 
     @Override
