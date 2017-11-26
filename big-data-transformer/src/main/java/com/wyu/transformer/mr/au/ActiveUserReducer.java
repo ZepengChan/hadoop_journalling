@@ -32,9 +32,10 @@ public class ActiveUserReducer extends Reducer<StatsUserDimension, TimeOutputVal
                 this.unique.add(value.getId());
             }
 
-            this.outputValue.setKpi(KpiType.valueOf(key.getStatsCommon().getKpi().getKpiName()));
+            this.outputValue.setKpi(KpiType.valueOfName(key.getStatsCommon().getKpi().getKpiName()));
             this.map.put(new IntWritable(-1),new IntWritable(this.unique.size()));
             this.outputValue.setValue(this.map);
+            context.write(key, outputValue);
         } finally {
             //清空
             unique.clear();

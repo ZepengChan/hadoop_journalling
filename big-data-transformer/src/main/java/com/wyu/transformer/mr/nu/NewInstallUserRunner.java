@@ -72,9 +72,9 @@ public class NewInstallUserRunner implements Tool {
 //        job.setMapperClass(NewInstallUserMapper.class);
 //        job.setMapOutputKeyClass();
         /*本地运行*/
-//        TableMapReduceUtil.initTableMapperJob(initScan(job), NewInstallUserMapper.class, StatsUserDimension.class, TimeOutputValue.class, job, false);
+        TableMapReduceUtil.initTableMapperJob(initScan(job), NewInstallUserMapper.class, StatsUserDimension.class, TimeOutputValue.class, job, false);
         /*集群运行,本地提交和打包(jar)提交*/
-        TableMapReduceUtil.initTableMapperJob(initScan(job),NewInstallUserMapper.class, StatsUserDimension.class, TimeOutputValue.class,job,true);
+//        TableMapReduceUtil.initTableMapperJob(initScan(job),NewInstallUserMapper.class, StatsUserDimension.class, TimeOutputValue.class,job,true);
 
         job.setReducerClass(NewInstallUserReducer.class);
         job.setOutputKeyClass(StatsUserDimension.class);

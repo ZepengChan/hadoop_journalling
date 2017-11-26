@@ -38,7 +38,7 @@ public class ActiveUserMapper extends TableMapper<StatsUserDimension, TimeOutput
         String platform = Bytes.toString(value.getValue(family, Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_PALTFORM)));
         String serverTime = Bytes.toString(value.getValue(family, Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME)));
         //过滤无效数据
-        if (StringUtils.isBlank(uuid) || StringUtils.isBlank(serverTime) || StringUtils.isBlank(platform) || StringUtils.isNumeric(serverTime.trim())) {
+        if (StringUtils.isBlank(uuid) || StringUtils.isBlank(serverTime) || StringUtils.isBlank(platform)) {
             System.out.println("uuid:" + uuid
                     + "\tplatform:" + platform
                     + "\tserverTime:" + serverTime);

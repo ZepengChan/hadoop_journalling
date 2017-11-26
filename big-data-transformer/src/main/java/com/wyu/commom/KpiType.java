@@ -21,4 +21,20 @@ public enum KpiType {
     KpiType(String name) {
         this.name = name;
     }
+    
+
+    /**
+     * 根据kpiType的名称字符串值，获取对应的kpitype枚举对象
+     * 
+     * @param name
+     * @return
+     */
+    public static KpiType valueOfName(String name) {
+        for (KpiType type : values()) {
+            if (type.name.equals(name)) {
+                return type;
+            }
+        }
+        throw new RuntimeException("指定的name不属于该KpiType枚举类：" + name);
+    }
 }

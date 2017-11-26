@@ -123,7 +123,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
             DateDimension date = (DateDimension) dimension;
             psmt.setInt(++i, date.getYear());
             psmt.setInt(++i, date.getSeason());
-            psmt.setInt(++i, date.getMonth()+1);
+            psmt.setInt(++i, date.getMonth());
             psmt.setInt(++i, date.getWeek());
             psmt.setInt(++i, date.getDay());
             psmt.setString(++i, date.getType());
