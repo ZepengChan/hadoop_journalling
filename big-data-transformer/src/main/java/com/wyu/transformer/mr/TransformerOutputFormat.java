@@ -99,7 +99,7 @@ public class TransformerOutputFormat extends OutputFormat<BaseDimension, BaseSta
                 Class<?> clazz = Class.forName(collectorName);
                 IOutputCollector collector = (IOutputCollector) clazz.newInstance();
                 collector.collect(conf, key, value, pstmt, converter);
-
+                System.out.println(pstmt.toString());
                 if (count % Integer.valueOf(conf.get(GlobalConstants.JDBC_BATCH_NUMBER, GlobalConstants.DEFAULT_JDBC_BATCH_NUMBER)) == 0) {
                     pstmt.executeBatch();
                     conn.commit();

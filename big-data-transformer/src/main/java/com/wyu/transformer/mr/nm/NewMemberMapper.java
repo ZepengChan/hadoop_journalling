@@ -62,7 +62,7 @@ public class NewMemberMapper extends TableMapper<StatsUserDimension, TimeOutputV
          * 判断memberid是否是第一次访问
          */
         try {
-            if (StringUtils.isBlank(memberId) || MemberUtil.isNewMemberId(memberId, conn)) {
+            if (StringUtils.isBlank(memberId) || !MemberUtil.isNewMemberId(memberId, conn) || !MemberUtil.isValidateMemberId(memberId)) {
                 logger.warn("member id 不能为空 且必须是第一次访问的member id");
                 return;
             }
