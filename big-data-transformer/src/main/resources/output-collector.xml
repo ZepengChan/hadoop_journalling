@@ -29,4 +29,19 @@
 		<value>com.wyu.transformer.mr.am.ActiveMemberCollector</value>
 	</property>
 
+	<property>
+		<name>collector_new_member</name>
+		<value>com.wyu.transformer.mr.nm.NewMemberCollector</value>
+	</property>
+
+	<property>
+		<name>collector_browser_new_member</name>
+		<value>com.wyu.transformer.mr.nm.NewMemberCollector</value>
+	</property>
+
+	<property>
+		<name>collector_insert_member_info</name>
+		<value>com.wyu.transformer.mr.nm.NewMemberCollector</value>
+	</property>
+
 </configuration>
