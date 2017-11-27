@@ -55,10 +55,10 @@
 		<name>active_member</name>
 		<value>INSERT INTO `stats_user`(
 				`platform_dimension_id`,
-				`data_dimension_id`,
+				`date_dimension_id`,
 				`active_members`,
 				`created`
-			)  VALUES(? , ?, ?, ?) ON DUPLICATE KEY UPDATE `active_member` = ?
+			)  VALUES(? , ?, ?, ?) ON DUPLICATE KEY UPDATE `active_members` = ?
 
 		</value>
 	</property>

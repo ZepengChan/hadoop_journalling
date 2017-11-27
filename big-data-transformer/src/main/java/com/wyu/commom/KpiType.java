@@ -16,7 +16,7 @@ public enum KpiType {
 
     ACTIVER_MEMBER("active_member"),
 
-    BROWSER_ACTIVE_MEMBER("browser_active)member");
+    BROWSER_ACTIVE_MEMBER("browser_active_member");
 
 
 
