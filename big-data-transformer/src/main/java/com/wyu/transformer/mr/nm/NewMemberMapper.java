@@ -46,6 +46,7 @@ public class NewMemberMapper extends TableMapper<StatsUserDimension, TimeOutputV
         Configuration conf = context.getConfiguration();
         try {
             this.conn = JdbcManager.getConnection(conf, GlobalConstants.WAREHOUSE_OF_REPORT);
+            MemberUtil.deleteMemberInfoByDate(conf.get(GlobalConstants.RUNNING_DATE_PARAMES), conn);
         } catch (SQLException e) {
             logger.error("获取数据库连接异常",e);
             throw new IOException(e);

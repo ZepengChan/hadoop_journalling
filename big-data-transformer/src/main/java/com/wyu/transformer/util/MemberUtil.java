@@ -28,6 +28,30 @@ public class MemberUtil {
     };
 
     /**
+     * 删除指定日期的数据
+     * 
+     * @param date
+     * @param connection
+     * @throws SQLException
+     */
+    public static void deleteMemberInfoByDate(String date, Connection connection) throws SQLException {
+        PreparedStatement pstmt = null;
+        try {
+            pstmt = connection.prepareStatement("DELETE FROM `member_info` WHERE `created` = ?");
+            pstmt.setString(1, date);
+            pstmt.execute();
+        } finally {
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (Exception e) {
+                    // nothing
+                }
+            }
+        }
+
+    }
+    /**
      * p判断memberId的格式是否有效
      *
      * @param memberId
