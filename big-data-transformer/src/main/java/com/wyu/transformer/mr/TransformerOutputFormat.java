@@ -82,7 +82,7 @@ public class TransformerOutputFormat extends OutputFormat<BaseDimension, BaseSta
 
             try {
                 KpiType kpi = value.getKpi();
-                PreparedStatement pstmt = null;
+                PreparedStatement pstmt;
                 int count = 1;
                 if (map.get(kpi) == null) {
                     // 使用kpi进行区分，返回sql保存到config中

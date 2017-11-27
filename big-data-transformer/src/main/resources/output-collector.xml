@@ -19,6 +19,14 @@
 		<name>collector_browser_active_user</name>
 		<value>com.wyu.transformer.mr.au.ActiveUserBrowserCollector</value>
 	</property>
+	<property>
+		<name>collector_active_member</name>
+		<value>com.wyu.transformer.mr.am.ActiveMemberCollector</value>
+	</property>
 
+	<property>
+		<name>collector_browser_active_member</name>
+		<value>com.wyu.transformer.mr.am.ActiveMemberCollector</value>
+	</property>
 
 </configuration>
