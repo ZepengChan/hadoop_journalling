@@ -20,7 +20,8 @@ public enum KpiType {
 
     NEW_MEMBER("new_member"),
 
-    BROWSER_NEW_MEMBER("browser_new_member");
+    BROWSER_NEW_MEMBER("browser_new_member"),
+    INSERT_MEMBER_INFO("insert_member_info");
 
 
 

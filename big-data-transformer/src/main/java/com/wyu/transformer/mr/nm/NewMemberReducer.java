@@ -6,6 +6,7 @@ import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.MapWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.log4j.Logger;
 
@@ -31,6 +32,13 @@ public class NewMemberReducer extends Reducer<StatsUserDimension,TimeOutputValue
             //统计member id  去重
             for (TimeOutputValue value : values) {
                 this.unique.add(value.getId());
+            }
+            //输出member id
+            this.outputValue.setKpi(KpiType.INSERT_MEMBER_INFO);
+            for(String id : this.unique){
+                this.map.put(new IntWritable(-1),new Text(id));
+                this.outputValue.setValue(this.map);
+                context.write(key,this.outputValue);
             }
 
             this.map.put(new IntWritable(-1),new IntWritable(this.unique.size()));
