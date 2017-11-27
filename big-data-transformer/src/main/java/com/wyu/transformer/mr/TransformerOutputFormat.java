@@ -145,6 +145,5 @@ public class TransformerOutputFormat extends OutputFormat<BaseDimension, BaseSta
                 }
             }
         }
-
     }
 }
