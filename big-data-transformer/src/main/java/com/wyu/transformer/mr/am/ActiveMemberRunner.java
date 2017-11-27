@@ -137,7 +137,8 @@ public class ActiveMemberRunner implements Tool {
                 EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME,
                 EventLogConstants.LOG_COLUMN_NAME_PALTFORM,
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME,
-                EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION
+                EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION,
+                EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME
         };
         filterList.addFilter(getColumnFilter(columns));
 

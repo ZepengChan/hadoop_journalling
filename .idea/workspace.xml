@@ -50,8 +50,8 @@
       <file leaf-file-name="ActiveMemberRunner.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="154" column="21" lean-forward="true" selection-start-line="154" selection-start-column="21" selection-end-line="154" selection-end-column="21" />
+            <state relative-caret-position="243">
+              <caret line="140" column="60" lean-forward="false" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -688,7 +688,7 @@
       <workItem from="1511496411844" duration="4544000" />
       <workItem from="1511516560507" duration="759000" />
       <workItem from="1511666770224" duration="10406000" />
-      <workItem from="1511750188720" duration="3057000" />
+      <workItem from="1511750188720" duration="3934000" />
     </task>
     <task id="LOCAL-00001" summary="新用户分析(已完成)">
       <created>1511447366530</created>
@@ -761,7 +761,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139553000" />
+    <option name="totallyTimeSpent" value="140430000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -826,7 +826,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/ZepengChan/hadoop_journalling&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit." />
     <MESSAGE value="优化" />
     <MESSAGE value="活跃会员测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="活跃会员测试" />
+    <MESSAGE value="活跃会员优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="活跃会员优化" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1258,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="154" column="21" lean-forward="true" selection-start-line="154" selection-start-column="21" selection-end-line="154" selection-end-column="21" />
+        <state relative-caret-position="243">
+          <caret line="140" column="60" lean-forward="false" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
           <folding />
         </state>
       </provider>
