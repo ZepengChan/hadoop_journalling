@@ -44,4 +44,14 @@
 		<value>com.wyu.transformer.mr.nm.NewMemberCollector</value>
 	</property>
 
+	<property>
+		<name>collector_sessions</name>
+		<value>com.wyu.transformer.mr.sessions.SessionsCollector</value>
+	</property>
+
+	<property>
+		<name>collector_browser_sessions</name>
+		<value>com.wyu.transformer.mr.sessions.SessionsCollector</value>
+	</property>
+
 </configuration>

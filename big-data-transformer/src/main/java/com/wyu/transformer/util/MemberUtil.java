@@ -18,6 +18,7 @@ import java.util.Map.Entry;
  */
 public class MemberUtil {
 
+
     private static Map<String,Boolean> cache = new LinkedHashMap<String, Boolean>(){
 
         @Override

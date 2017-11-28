@@ -1,0 +1,167 @@
+package com.wyu.transformer.mr.sessions;
+
+import com.google.common.collect.Lists;
+import com.wyu.commom.EventLogConstants;
+import com.wyu.commom.GlobalConstants;
+import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.value.map.TimeOutputValue;
+import com.wyu.transformer.model.value.reduce.MapWritableValue;
+import com.wyu.transformer.mr.TransformerOutputFormat;
+import com.wyu.transformer.mr.nm.NewMemberRunner;
+import com.wyu.util.TimeUtil;
+import org.apache.commons.lang.StringUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.Scan;
+import org.apache.hadoop.hbase.filter.Filter;
+import org.apache.hadoop.hbase.filter.FilterList;
+import org.apache.hadoop.hbase.filter.MultipleColumnPrefixFilter;
+import org.apache.hadoop.hbase.mapreduce.TableMapReduceUtil;
+import org.apache.hadoop.hbase.util.Bytes;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
+import org.apache.log4j.Logger;
+
+import java.util.List;
+
+/**
+ * 统计会话个数&会话长度runner类
+ * @author ken
+ * @date 2017/11/28
+ */
+public class SessionRunner implements Tool {
+
+    private static final Logger logger = Logger.getLogger(SessionRunner.class);
+    private Configuration conf = new Configuration();
+
+    public static void main(String[] args) {
+        try {
+            ToolRunner.run(new SessionRunner(),args);
+        } catch (Exception e) {
+            logger.error("运行sessions Runner 出现异常!"+ e);
+            throw  new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public int run(String[] args) throws Exception {
+        Configuration conf = this.getConf();
+
+        /*处理参数*/
+        this.processArgs(conf, args);
+
+        Job job = Job.getInstance(conf, "sessions");
+
+        job.setJarByClass(SessionRunner.class);
+        //本地运行,最后一个参数指定为false
+        TableMapReduceUtil.initTableMapperJob(initScan(job), SessionMapper.class, StatsUserDimension.class, TimeOutputValue.class, job, false);
+        //集群
+//        TableMapReduceUtil.initTableMapperJob(initScan(job), SessionMapper.class, StatsUserDimension.class, TimeOutputValue.class, job);
+        job.setReducerClass(SessionReducer.class);
+        job.setOutputKeyClass(StatsUserDimension.class);
+        job.setOutputValueClass(MapWritableValue.class);
+        job.setOutputFormatClass(TransformerOutputFormat.class);
+        // 开始毫秒数
+        long startTime = System.currentTimeMillis();
+        try {
+            if(job.waitForCompletion(true)) {
+                return 0;
+            }else {
+                return -1;
+            }
+        } finally {
+            // 结束的毫秒数
+            long endTime = System.currentTimeMillis();
+            logger.info("Job<" + job.getJobName() + ">是否执行成功:" + job.isSuccessful() + "; 开始时间:" + startTime + "; 结束时间:" + endTime + "; 用时:" + (endTime - startTime) + "ms");
+        }
+    }
+
+    @Override
+    public Configuration getConf() {
+        return this.conf;
+    }
+
+    @Override
+    public void setConf(Configuration conf) {
+        conf.addResource("output-collector.xml");
+        conf.addResource("transformer-env.xml");
+        conf.addResource("query-mapping.xml");
+        this.conf = HBaseConfiguration.create(conf);
+    }
+
+    /**
+     * 处理参数
+     *
+     * @param conf
+     * @param args
+     */
+    private void processArgs(Configuration conf, String[] args) {
+        String date = null;
+        for (int i = 0; i < args.length; i++) {
+            if ("-d".equals(args[i])) {
+                if (i + 1 < args.length) {
+                    date = args[++i];
+                    break;
+                }
+            }
+        }
+
+        if (StringUtils.isBlank(date) || !TimeUtil.isValidateRunningDate(date)) {
+            date = TimeUtil.getYesterday();
+        }
+
+        conf.set(GlobalConstants.RUNNING_DATE_PARAMES, date);
+    }
+
+    /**
+     * 初始化scan集合
+     *
+     * @param job
+     * @return
+     */
+    private List<Scan> initScan(Job job) {
+
+        Configuration conf = job.getConfiguration();
+        /*获取运行时间: yyyy-MM-dd*/
+        String date = conf.get(GlobalConstants.RUNNING_DATE_PARAMES);
+        long startDate = TimeUtil.parseString2Long(date);
+        long endDate = startDate + GlobalConstants.DAY_OF_MILLISECONDS;
+
+        Scan scan = new Scan();
+
+        scan.setStopRow(Bytes.toBytes(endDate + ""));
+        scan.setStartRow(Bytes.toBytes(startDate + ""));
+
+        FilterList filterList = new FilterList();
+        /*过滤数据.只分析launch事件*/
+        String[] columns = new String[]{
+                EventLogConstants.LOG_COLUMN_NAME_SESSION_ID,
+                EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME,
+                EventLogConstants.LOG_COLUMN_NAME_PALTFORM,
+                EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME,
+                EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION
+        };
+        filterList.addFilter(getColumnFilter(columns));
+
+
+        scan.setFilter(filterList);
+        scan.setAttribute(Scan.SCAN_ATTRIBUTES_TABLE_NAME, Bytes.toBytes(EventLogConstants.HBASE_NAME_EVENT_LOGS));
+        return Lists.newArrayList(scan);
+    }
+
+    /**
+     * 获取列名过滤column
+     *
+     * @param columns
+     * @return
+     */
+    private Filter getColumnFilter(String[] columns) {
+        int length = columns.length;
+        byte[][] filter = new byte[length][];
+        for (int i = 0; i < length; i++) {
+            filter[i] = Bytes.toBytes(columns[i]);
+        }
+        return new MultipleColumnPrefixFilter(filter);
+    }
+}
