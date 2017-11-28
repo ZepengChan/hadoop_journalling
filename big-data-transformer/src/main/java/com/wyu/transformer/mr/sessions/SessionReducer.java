@@ -49,7 +49,7 @@ public class SessionReducer extends Reducer<StatsUserDimension, TimeOutputValue,
                 }
                 sessionLength += tmp;
             }
-            //获取秒数
+            //获取秒数,不足1秒的，按1 秒计算
             if(sessionLength % 1000 == 0){
                 sessionLength = sessionLength / 1000 ;
             }else{
