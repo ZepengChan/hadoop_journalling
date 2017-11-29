@@ -13,10 +13,9 @@
     <bookmark url="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserRunner.java" line="134" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14ca7e5f-d1ac-4969-b349-436734af0497" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveUserMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveUserReducer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveUserRunner.java" />
+    <list default="true" id="14ca7e5f-d1ac-4969-b349-436734af0497" name="Default" comment="新会员测试">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/big-data-track-jssdk/target/" />
@@ -42,54 +41,27 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand />
+    <expand>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="MySQL - report@localhost" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="MySQL - report@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="report" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="MySQL - report@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="report" type="e3449647:DbNodeDescriptor" />
+        <item name="stats_user" type="e3449647:DbNodeDescriptor" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ActiveMemberRunner.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="140" column="60" lean-forward="false" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventLogConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/EventLogConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActiveMemberCollector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberCollector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="31" column="106" lean-forward="true" selection-start-line="31" selection-start-column="106" selection-end-line="31" selection-end-column="106" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActiveMemberMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -130,18 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/DateDimension.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/service/IDimensionConverter.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/pom.xml" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/transformerOutputFormat.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/value/BaseStatsValueWritable.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/etl/util/LoggerUtil.java" />
-        <option value="$PROJECT_DIR$/big-data-api/src/main/resources/conf/applicationContext-dao.xml" />
-        <option value="$PROJECT_DIR$/big-data-api/src/main/resources/conf/applicationContext-service.xml" />
-        <option value="$PROJECT_DIR$/big-data-api/src/main/java/com/wyu/service/impl/UserServiceImpl.java" />
-        <option value="/AngularJS Fragment (springmvc.xml:1655).js" />
-        <option value="$PROJECT_DIR$/big-data-api/src/main/resources/conf/springmvc.xml" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/util/JdbcManager.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/StatsDimension.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/CommonDimension.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/KpiDimension.java" />
@@ -163,7 +123,6 @@
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserMapper.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/IOutputCollector.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/util/TimeUtil.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/service/impl/DimensionConverterImpl.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserRunner.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserMapper.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserReducer.java" />
@@ -174,13 +133,26 @@
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveUserRunner.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveUserMapper.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberReducer.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberCollector.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberRunner.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberMapper.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberMapper.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberRunner.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/TransformerOutputFormat.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberReducer.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberCollector.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/util/MemberUtil.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/sessions/SessionMapper.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/TimeChain.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionRunner.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionsCollector.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/KpiType.java" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/resources/query-mapping.xml" />
         <option value="$PROJECT_DIR$/big-data-transformer/src/main/resources/output-collector.xml" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberCollector.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/TransformerOutputFormat.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberMapper.java" />
-        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberRunner.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionMapper.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionReducer.java" />
+        <option value="$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/service/impl/DimensionConverterImpl.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -210,20 +182,15 @@
         <option name="lookForNested" value="true" />
       </MavenImportingSettings>
     </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="jdk-1.8" />
+      </list>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="big-data-transformer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="big-data-transformer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
+      <expand />
       <select />
     </treeState>
   </component>
@@ -282,6 +249,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -293,16 +263,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -311,6 +278,9 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="SearchEverywhereHistoryKey" value="coll&#9;FILE&#9;file://E:/gitDemo/big-data/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/StatsUserNewInstallUserCollector.java&#10;Even&#9;FILE&#9;file://E:/gitDemo/big-data/big-data-transformer/src/main/java/com/wyu/commom/EventLogConstants.java&#10;bASE&#9;FILE&#9;file://E:/gitDemo/big-data/big-data-transformer/src/main/java/com/wyu/transformer/model/value/BaseStatsValueWritable.java&#10;G&#9;FILE&#9;file://E:/gitDemo/big-data/big-data-transformer/src/main/java/com/wyu/commom/GlobalConstants.java&#10;ip&#9;FILE&#9;file://E:/gitDemo/big-data/big-data-transformer/src/main/java/com/wyu/etl/util/IPSeekerExt.java" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="last.edited.regexp" value="Sample Text" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -324,11 +294,11 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\gitDemo\big-data\big-data-transformer\src\main\java\com\wyu\transformer\mr\sessions" />
       <recent name="E:\gitDemo\big-data\big-data-transformer\src\main\java\com\wyu\transformer\mr\am" />
       <recent name="E:\gitDemo\big-data\big-data-transformer\src\main\java\com\wyu\transformer\mr\au" />
       <recent name="E:\gitDemo\big-data\big-data-transformer\src\main\resources" />
       <recent name="E:\gitDemo\big-data\big-data-transformer\src\main\java\com\wyu\etl\util\ip" />
-      <recent name="E:\gitDemo\big-data\big-data-transformer\src\main\java\com\wyu\etl\util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -689,6 +659,11 @@
       <workItem from="1511516560507" duration="759000" />
       <workItem from="1511666770224" duration="10406000" />
       <workItem from="1511750188720" duration="3934000" />
+      <workItem from="1511759842494" duration="14702000" />
+      <workItem from="1511838439021" duration="2356000" />
+      <workItem from="1511867366034" duration="8390000" />
+      <workItem from="1511924426909" duration="1409000" />
+      <workItem from="1511926176128" duration="240000" />
     </task>
     <task id="LOCAL-00001" summary="新用户分析(已完成)">
       <created>1511447366530</created>
@@ -725,7 +700,35 @@
       <option name="project" value="LOCAL" />
       <updated>1511700807965</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="新会员测试">
+      <created>1511766757620</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1511766757620</updated>
+    </task>
+    <task id="LOCAL-00007" summary="新会员测试">
+      <created>1511769632744</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1511769632744</updated>
+    </task>
+    <task id="LOCAL-00008" summary="统计会话个数及时长测试">
+      <created>1511874097227</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1511874097227</updated>
+    </task>
+    <task id="LOCAL-00009" summary="新会员测试">
+      <created>1511926324126</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1511926324127</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -761,7 +764,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140430000" />
+    <option name="totallyTimeSpent" value="167527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -776,20 +779,20 @@
     <frame x="-1928" y="-308" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32849163" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5042644" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5063966" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32849163" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31284916" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.49573562" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32849163" sideWeight="0.4936034" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32849163" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20895523" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="725" y="212" width="469" height="615" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -801,18 +804,29 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23660715" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23575419" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -827,7 +841,9 @@
     <MESSAGE value="优化" />
     <MESSAGE value="活跃会员测试" />
     <MESSAGE value="活跃会员优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="活跃会员优化" />
+    <MESSAGE value="统计会话个数及时长测试" />
+    <MESSAGE value="新会员测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="新会员测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -835,132 +851,135 @@
     </breakpoint-manager>
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/StatsDimension.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/value/map/TimeOutputValue.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserBrowserCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#360#361#0" expanded="false" />
-            <element signature="e#385#386#0" expanded="false" />
-            <element signature="e#421#422#0" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
-            <element signature="e#478#479#0" expanded="false" />
-            <element signature="e#505#506#0" expanded="false" />
-            <element signature="e#543#544#0" expanded="false" />
-            <element signature="e#575#576#0" expanded="false" />
-            <element signature="e#620#621#0" expanded="false" />
-            <element signature="e#647#648#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="614">
+          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-common/2.5.0/hadoop-common-2.5.0-sources.jar!/org/apache/hadoop/util/Shell.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="270" column="36" lean-forward="true" selection-start-line="270" selection-start-column="36" selection-end-line="270" selection-end-column="36" />
+        <state relative-caret-position="504">
+          <caret line="98" column="37" lean-forward="true" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/pom.xml">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/value/reduce/MapWritableValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-905">
-          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+        <state relative-caret-position="-58">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/etl/util/IpUtil.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-core/2.5.0/hadoop-mapreduce-client-core-2.5.0.jar!/org/apache/hadoop/mapreduce/Reducer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="572">
+          <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/etl/mr/ald/A.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/0.98.6-hadoop2/hbase-client-0.98.6-hadoop2.jar!/org/apache/hadoop/hbase/client/Scan.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-core/2.5.0/hadoop-mapreduce-client-core-2.5.0.jar!/org/apache/hadoop/mapreduce/TaskInputOutputContext.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        <state relative-caret-position="315">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-server/0.98.6-hadoop2/hbase-server-0.98.6-hadoop2.jar!/org/apache/hadoop/hbase/mapreduce/TableMapReduceUtil.class">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/service/IDimensionConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="74" column="58" lean-forward="false" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
+        <state relative-caret-position="378">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/etl/mr/ald/AnalyserLogDataMapper.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/IOutputCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="357">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/etl/mr/ald/AnalyserLogDataRunner.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="701">
-          <caret line="123" column="5" lean-forward="true" selection-start-line="101" selection-start-column="2" selection-end-line="123" selection-end-column="5" />
+        <state relative-caret-position="-352">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/GlobalConstants.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/utils.java" />
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberReducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="651">
+          <caret line="41" column="9" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="41" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/PlatFormDimension.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="509">
+          <caret line="70" column="49" lean-forward="false" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserReducer.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        <state relative-caret-position="761">
+          <caret line="165" column="5" lean-forward="true" selection-start-line="90" selection-start-column="2" selection-end-line="165" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/BaseDimension.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="378">
+          <caret line="31" column="106" lean-forward="false" selection-start-line="31" selection-start-column="106" selection-end-line="31" selection-end-column="106" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-track-jssdk/src/main/webapp/demo.jsp">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/TransformerOutputFormat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="462">
+          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-track-jssdk/src/main/webapp/js/analytics.js">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10abd790-a8bd-4657-9f40-5a6984b7ae94/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-core/2.5.0/hadoop-mapreduce-client-core-2.5.0.jar!/org/apache/hadoop/mapreduce/RecordWriter.class">
+    <entry file="das://table:/10f54be5/10abd790-a8bd-4657-9f40-5a6984b7ae94/report.order_info">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/10f54be5/10abd790-a8bd-4657-9f40-5a6984b7ae94/report.member_info">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/util/JdbcManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -968,127 +987,175 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3108">
           <caret line="162" column="49" lean-forward="false" selection-start-line="162" selection-start-column="49" selection-end-line="162" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/DateDimension.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/DateEnum.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="147">
+          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/StatsDeviceBrowserNewInstallUserCollector.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/GlobalConstants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="147">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/StatsUserNewInstallUserCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/BrowserDimension.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/KpiDimension.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/util/MemberUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding />
+          <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/EventLogConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2389">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/10f54be5/10abd790-a8bd-4657-9f40-5a6984b7ae94/report.stats_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="51" column="83" lean-forward="false" selection-start-line="51" selection-start-column="83" selection-end-line="51" selection-end-column="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="62" column="27" lean-forward="true" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="467">
+          <caret line="63" column="52" lean-forward="true" selection-start-line="61" selection-start-column="6" selection-end-line="63" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/resources/transformer-env.xml">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberReducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="651">
+          <caret line="46" column="44" lean-forward="true" selection-start-line="44" selection-start-column="11" selection-end-line="46" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserReducer.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="173">
+          <caret line="93" column="71" lean-forward="false" selection-start-line="93" selection-start-column="71" selection-end-line="93" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/StatsUserDimension.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hbase/hbase-client/0.98.6-hadoop2/hbase-client-0.98.6-hadoop2.jar!/org/apache/hadoop/hbase/client/Scan.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="43" column="31" lean-forward="false" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/StatsCommonDimension.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nm/NewMemberRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="420">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="51" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-api/src/main/resources/conf/applicationContext-dao.xml">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/resources/output-collector.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="1113">
+          <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserCollector.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/KpiType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="546">
+          <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserMapper.java">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/resources/query-mapping.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="2898">
+          <caret line="138" column="15" lean-forward="false" selection-start-line="138" selection-start-column="15" selection-end-line="138" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/TimeChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1457">
+          <caret line="93" column="15" lean-forward="false" selection-start-line="93" selection-start-column="15" selection-end-line="93" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="69" column="19" lean-forward="true" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionReducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="44" column="62" lean-forward="false" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionsCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="45" column="54" lean-forward="false" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/sessions/SessionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/etl/util/IpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="79" column="36" lean-forward="false" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/StatsDimension.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5082">
-          <caret line="278" column="30" lean-forward="false" selection-start-line="278" selection-start-column="30" selection-end-line="278" selection-end-column="30" />
+        <state relative-caret-position="211">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
             <marker date="1511699803365" expanded="true" signature="4333:4479" ph="SELECT `id` dimension_date" />
             <marker date="1511699803365" expanded="true" signature="5164:5310" ph="SELECT `id` dimension_date" />
             <marker date="1511699803365" expanded="true" signature="6105:6203" ph="select `plat... stats_user" />
@@ -1101,166 +1168,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/dim/base/PlatFormDimension.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/service/impl/DimensionConverterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3454">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-hdfs/2.5.0/hadoop-hdfs-2.5.0.jar!/org/apache/hadoop/hdfs/server/datanode/web/resources/DatanodeWebHdfsMethods.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="174" column="20" lean-forward="false" selection-start-line="174" selection-start-column="20" selection-end-line="174" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-api/src/main/webapp/analyse/resources/js/highmaps.src.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="10797" column="3" lean-forward="false" selection-start-line="10797" selection-start-column="3" selection-end-line="10797" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-api/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/big-data-api/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserBrowserCollector.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/au/ActiveUserRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="98" column="37" lean-forward="true" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2848#2849#0" expanded="true" />
-            <element signature="e#2880#2881#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/KpiType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/resources/query-mapping.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="66" column="35" lean-forward="false" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/resources/output-collector.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="62" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/model/value/reduce/MapWritableValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-core/2.5.0/hadoop-mapreduce-client-core-2.5.0.jar!/org/apache/hadoop/mapreduce/Reducer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-core/2.5.0/hadoop-mapreduce-client-core-2.5.0.jar!/org/apache/hadoop/mapreduce/TaskInputOutputContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/service/IDimensionConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/util/JdbcManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/service/impl/DimensionConverterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="36" column="6" lean-forward="true" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
-          <folding>
-            <element signature="e#1177#1365#0" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/IOutputCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/TransformerOutputFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-987">
-          <caret line="37" column="40" lean-forward="false" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
-          <folding>
-            <marker date="1511753205960" expanded="true" signature="5606:5630" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberReducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="26" column="17" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="31" column="106" lean-forward="true" selection-start-line="31" selection-start-column="106" selection-end-line="31" selection-end-column="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/commom/EventLogConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/am/ActiveMemberRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="140" column="60" lean-forward="false" selection-start-line="140" selection-start-column="60" selection-end-line="140" selection-end-column="60" />
+        <state relative-caret-position="247">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1324,6 +1278,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
