@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="big-data-api:war">
-    <output-path>$PROJECT_DIR$/big-data-api/target</output-path>
-    <root id="archive" name="big-data-api-0.0.1-SNAPSHOT.war">
-      <element id="artifact" artifact-name="big-data-api:war exploded" />
-    </root>
-  </artifact>
-</component>

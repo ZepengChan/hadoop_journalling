@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="big-data-track-jssdk:war">
-    <output-path>$PROJECT_DIR$/big-data-track-jssdk/target</output-path>
-    <root id="archive" name="big-data-track-jssdk-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="big-data-track-jssdk:war exploded" />
-    </root>
-  </artifact>
-</component>
