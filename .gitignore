@@ -13,3 +13,6 @@ buildNumber.properties
 /.idea/
 /.settings/
 
+/.project
+/big-data.iml
+/big-data-api/.settings/
