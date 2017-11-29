@@ -13,9 +13,7 @@
     <bookmark url="file://$PROJECT_DIR$/big-data-transformer/src/main/java/com/wyu/transformer/mr/nu/NewInstallUserRunner.java" line="134" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14ca7e5f-d1ac-4969-b349-436734af0497" name="Default" comment="新会员测试">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+    <list default="true" id="14ca7e5f-d1ac-4969-b349-436734af0497" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/big-data-track-jssdk/target/" />
@@ -61,7 +59,18 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -258,6 +267,11 @@
             <path>
               <item name="big-data" type="b2602c69:ProjectViewProjectNode" />
               <item name="big-data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="big-data" type="b2602c69:ProjectViewProjectNode" />
+              <item name="big-data" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -663,7 +677,7 @@
       <workItem from="1511838439021" duration="2356000" />
       <workItem from="1511867366034" duration="8390000" />
       <workItem from="1511924426909" duration="1409000" />
-      <workItem from="1511926176128" duration="240000" />
+      <workItem from="1511926176128" duration="344000" />
     </task>
     <task id="LOCAL-00001" summary="新用户分析(已完成)">
       <created>1511447366530</created>
@@ -728,7 +742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511926324127</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=".gitignore">
+      <created>1511926445653</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1511926445653</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -764,7 +785,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167527000" />
+    <option name="totallyTimeSpent" value="167631000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -843,7 +864,8 @@
     <MESSAGE value="活跃会员优化" />
     <MESSAGE value="统计会话个数及时长测试" />
     <MESSAGE value="新会员测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="新会员测试" />
+    <MESSAGE value=".gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value=".gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1213,7 +1235,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="294">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
