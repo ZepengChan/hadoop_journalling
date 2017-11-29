@@ -57,12 +57,18 @@ public class MapWritableValue extends BaseStatsValueWritable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         MapWritableValue that = (MapWritableValue) o;
 
-        if (value != null ? !value.equals(that.value) : that.value != null) return false;
+        if (value != null ? !value.equals(that.value) : that.value != null) {
+            return false;
+        }
         return kpi == that.kpi;
     }
 

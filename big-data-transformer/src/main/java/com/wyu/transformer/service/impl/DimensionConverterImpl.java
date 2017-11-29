@@ -13,6 +13,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/**
+ * 公共维度信息数据库操作类
+ * @author ken
+ */
 public class DimensionConverterImpl implements IDimensionConverter {
 
     private static final Logger logger = Logger.getLogger(DimensionConverterImpl.class);
@@ -20,7 +24,6 @@ public class DimensionConverterImpl implements IDimensionConverter {
     private static final String URL = "jdbc:mysql://192.168.123.107:3306/report";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
-    private static final long serialVersionUID = 8894507016522723685L;
     static {
         try {
             Class.forName(DRIVER);
