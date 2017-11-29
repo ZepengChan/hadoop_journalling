@@ -30,6 +30,7 @@ public class ActiveUserMapper extends TableMapper<StatsUserDimension, TimeOutput
     private BrowserDimension defaultBrowser = new BrowserDimension("", "");
     private KpiDimension activeUserKpi = new KpiDimension(KpiType.ACTIVE_USER.name);
     private KpiDimension activeUserBrowserKpi = new KpiDimension(KpiType.BROWSER_ACTIVE_USER.name);
+    private KpiDimension hourlyActiveUserKpi = new KpiDimension(KpiType.HOURLY_ACTIVE_USER.name);
 
     @Override
     protected void map(ImmutableBytesWritable key, Result value, Context context) throws IOException, InterruptedException {
@@ -66,10 +67,15 @@ public class ActiveUserMapper extends TableMapper<StatsUserDimension, TimeOutput
             this.outputKey.setBrowser(defaultBrowser);
             //设置platform
             statsCommonDimension.setPlatForm(pf);
+
+            //输出active user的键值对
             //设置kpi
             statsCommonDimension.setKpi(activeUserKpi);
             context.write(this.outputKey, this.outputValue);
 
+            //输出hourly active user键值对
+            statsCommonDimension.setKpi(hourlyActiveUserKpi);
+            context.write(this.outputKey,this.outputValue);
             //browser 维度统计
             statsCommonDimension.setKpi(activeUserBrowserKpi);
             for (BrowserDimension br : browserDimensionList) {

@@ -116,4 +116,16 @@ public class NewMemberMapper extends TableMapper<StatsUserDimension, TimeOutputV
             }
         }
     }
+
+    @Override
+    protected void cleanup(Context context) throws IOException, InterruptedException {
+        super.cleanup(context);
+        if(this.conn != null){
+            try {
+                this.conn.close();
+            } catch (SQLException e) {
+                //nothing
+            }
+        }
+    }
 }

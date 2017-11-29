@@ -24,7 +24,11 @@ public enum KpiType {
     INSERT_MEMBER_INFO("insert_member_info"),
 
     SESSIONS("sessions"),
-    BROWSER_SESSIONS("browser_sessions")
+    BROWSER_SESSIONS("browser_sessions"),
+
+    HOURLY_ACTIVE_USER("hourly_active_user"),
+    HOURLY_SESSIONS("hourly_sessions"),
+    HOURLY_SESSIONS_LENGTH("hourly_sessions_length")
     ;
 
 

@@ -54,4 +54,9 @@
 		<value>com.wyu.transformer.mr.sessions.SessionsCollector</value>
 	</property>
 
+	<property>
+		<name>collector_hourly_active_user</name>
+		<value>com.wyu.transformer.mr.au.HourlyActiveUserCollector</value>
+	</property>
+
 </configuration>
