@@ -28,7 +28,9 @@ public enum KpiType {
 
     HOURLY_ACTIVE_USER("hourly_active_user"),
     HOURLY_SESSIONS("hourly_sessions"),
-    HOURLY_SESSIONS_LENGTH("hourly_sessions_length")
+    HOURLY_SESSIONS_LENGTH("hourly_sessions_length"),
+
+    WEBSITE_PAGEVIEW("website_pageview")
     ;
 
 

@@ -69,4 +69,8 @@
 		<value>com.wyu.transformer.mr.sessions.SessionsCollector</value>
 	</property>
 
+	<property>
+		<name>collector_website_pageview</name>
+		<value>com.wyu.transformer.mr.pv.PageViewCollector</value>
+	</property>
 </configuration>

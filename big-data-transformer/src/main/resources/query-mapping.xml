@@ -213,4 +213,17 @@
 		</value>
 	</property>
 
+	<property>
+		<name>website_pageview</name>
+		<value>
+			INSERT INTO `stats_device_browser`(
+			`platform_dimension_id`,
+			`date_dimension_id`,
+			`browser_dimension_id`,
+			`pv`,
+			`created`
+			) VALUES(?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE `pv` = ?
+		</value>
+	</property>
+
 </configuration>
