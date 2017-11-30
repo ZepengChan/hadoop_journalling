@@ -22,7 +22,7 @@ public class AnalyticsEngineSdk {
 	/**
 	 * 请求链接
  	 */
-	private static final String ACCESS_URL = "http://192.168.56.131/BfImg.gif";
+	private static final String ACCESS_URL = "http://192.168.56.140/BfImg.gif";
 	private static final String PLATFOR_NAME = "java_server";
 	private static final String SDK_NAME = "jdk";
 	private static final String VERSION = "1";

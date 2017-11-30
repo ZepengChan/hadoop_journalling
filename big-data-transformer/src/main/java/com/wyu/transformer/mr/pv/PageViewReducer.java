@@ -20,9 +20,11 @@ public class PageViewReducer extends Reducer<StatsUserDimension, NullWritable, S
     private MapWritableValue mapWritableValue = new MapWritableValue();
     private MapWritable map = new MapWritable();
 
-    @Override
+
+
+	@Override
     protected void reduce(StatsUserDimension key, Iterable<NullWritable> values, Context context) throws IOException, InterruptedException {
-        int pvCount = 0;
+        int pvCount = 0 ;
         for(NullWritable ignored : values){
             //每一条直接 +1 不过滤
             pvCount++;

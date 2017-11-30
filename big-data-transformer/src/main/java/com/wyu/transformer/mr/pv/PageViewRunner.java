@@ -119,30 +119,32 @@ public class PageViewRunner implements Tool {
      */
     private List<Scan> initScan(Job job) {
 
-        Configuration conf = job.getConfiguration();
-        /*获取运行时间: yyyy-MM-dd*/
+    	Configuration conf = job.getConfiguration();
+        // 获取运行时间: yyyy-MM-dd
         String date = conf.get(GlobalConstants.RUNNING_DATE_PARAMES);
         long startDate = TimeUtil.parseString2Long(date);
         long endDate = startDate + GlobalConstants.DAY_OF_MILLISECONDS;
 
         Scan scan = new Scan();
-        scan.setStartRow(Bytes.toBytes(startDate + ""));
-        scan.setStopRow(Bytes.toBytes(endDate + ""));
+        // 定义hbase扫描的开始rowkey和结束rowkey
+        scan.setStartRow(Bytes.toBytes("" + startDate));
+        scan.setStopRow(Bytes.toBytes("" + endDate));
 
         FilterList filterList = new FilterList();
-        filterList.addFilter(new SingleColumnValueFilter(PageViewMapper.family,Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME), CompareOp.EQUAL,Bytes.toBytes(EventEnum.PAGEVIEW.alias)));
-        /*过滤数据.只分析launch事件*/
-        String[] columns = new String[]{
-                EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME,
-                EventLogConstants.LOG_COLUMN_NAME_CURRENT_URL,
-                EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME,
-                EventLogConstants.LOG_COLUMN_NAME_PALTFORM,
-                EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME,
-                EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION
+        // 只需要pageview事件
+        filterList.addFilter(new SingleColumnValueFilter(PageViewMapper.family, Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME), CompareOp.EQUAL, Bytes.toBytes(EventLogConstants.EventEnum.PAGEVIEW.alias)));
+        // 定义mapper中需要获取的列名
+        String[] columns = new String[] { EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME, // 获取事件名称
+                EventLogConstants.LOG_COLUMN_NAME_CURRENT_URL, // 当前url
+                EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME, // 服务器时间
+                EventLogConstants.LOG_COLUMN_NAME_PALTFORM, // 平台名称
+                EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME, // 浏览器名称
+                EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION // 浏览器版本号
         };
-        filterList.addFilter(getColumnFilter(columns));
-        scan.setFilter(filterList);
+        filterList.addFilter(this.getColumnFilter(columns));
+
         scan.setAttribute(Scan.SCAN_ATTRIBUTES_TABLE_NAME, Bytes.toBytes(EventLogConstants.HBASE_NAME_EVENT_LOGS));
+        scan.setFilter(filterList);
         return Lists.newArrayList(scan);
     }
 
