@@ -26,6 +26,7 @@ public class SessionsCollector implements IOutputCollector {
         MapWritable map = mapWritableValue.getValue();
         int sessions = ((IntWritable)(map.get(new IntWritable(-1)))).get();
         int sessionsLength = ((IntWritable)(map.get(new IntWritable(-2)))).get();
+        System.out.println();
 
         // 设置value
         int i = 0;
