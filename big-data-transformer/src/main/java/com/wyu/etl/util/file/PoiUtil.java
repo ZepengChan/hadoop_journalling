@@ -15,9 +15,7 @@ public class PoiUtil {
     public static Workbook getWorkbook(String filePath) {
         try {
             return WorkbookFactory.create(new FileInputStream(filePath));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InvalidFormatException e) {
+        } catch (IOException | InvalidFormatException e) {
             e.printStackTrace();
         }
         return null;

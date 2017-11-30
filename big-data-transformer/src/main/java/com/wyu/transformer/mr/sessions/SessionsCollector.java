@@ -2,6 +2,7 @@ package com.wyu.transformer.mr.sessions;
 
 import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.BaseDimension;
+import com.wyu.transformer.model.dim.base.KpiDimension;
 import com.wyu.transformer.model.dim.base.StatsUserDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
@@ -29,31 +30,48 @@ public class SessionsCollector implements IOutputCollector {
         // 设置value
         int i = 0;
         switch (mapWritableValue.getKpi()) {
-        case SESSIONS:
-            pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
-            pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
-            pstmt.setInt(++i, sessions); // 会话个数
-            pstmt.setInt(++i, sessionsLength); // 会话长度
-            pstmt.setString(++i, conf.get(GlobalConstants.RUNNING_DATE_PARAMES));
-            pstmt.setInt(++i, sessions); // 会话个数
-            pstmt.setInt(++i, sessionsLength); // 会话长度
+            case HOURLY_SESSIONS_LENGTH:
+            case HOURLY_SESSIONS:
+                pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+                pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
+                pstmt.setInt(++i, converter.getDimensionIdByValue(new KpiDimension(mapWritableValue.getKpi().name)));
+                // 设置每个小时的情况
+                for (i++; i < 28; i++) {
+                    int v = ((IntWritable) map.get(new IntWritable(i - 4))).get();
+                    pstmt.setInt(i, v);
+                    pstmt.setInt(i + 25, v);
+                }
+
+                pstmt.setString(i, conf.get(GlobalConstants.RUNNING_DATE_PARAMES));
+                break;
+
+            case SESSIONS:
+                pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+                pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
+                pstmt.setInt(++i, sessions); // 会话个数
+                pstmt.setInt(++i, sessionsLength); // 会话长度
+                pstmt.setString(++i, conf.get(GlobalConstants.RUNNING_DATE_PARAMES));
+                pstmt.setInt(++i, sessions); // 会话个数
+                pstmt.setInt(++i, sessionsLength); // 会话长度
             break;
-        case BROWSER_SESSIONS:
-            pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
-            pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
-            pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getBrowser()));
-            pstmt.setInt(++i, sessions); // 会话个数
-            pstmt.setInt(++i, sessionsLength); // 会话长度
-            pstmt.setString(++i, conf.get(GlobalConstants.RUNNING_DATE_PARAMES));
-            pstmt.setInt(++i, sessions); // 会话个数
-            pstmt.setInt(++i, sessionsLength); // 会话长度
+            case BROWSER_SESSIONS:
+                pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+                pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
+                pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getBrowser()));
+                pstmt.setInt(++i, sessions); // 会话个数
+                pstmt.setInt(++i, sessionsLength); // 会话长度
+                pstmt.setString(++i, conf.get(GlobalConstants.RUNNING_DATE_PARAMES));
+                pstmt.setInt(++i, sessions); // 会话个数
+                pstmt.setInt(++i, sessionsLength); // 会话长度
             break;
-        default:
-            throw new RuntimeException("不支持该kpi的输出" + mapWritableValue.getKpi());
+            default:
+                throw new RuntimeException("不支持该kpi的输出" + mapWritableValue.getKpi());
         }
 
         // 添加batch
         pstmt.addBatch();
+
+
     }
 
 }
