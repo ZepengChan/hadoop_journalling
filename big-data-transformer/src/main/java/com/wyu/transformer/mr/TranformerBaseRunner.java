@@ -70,9 +70,10 @@ public class TranformerBaseRunner implements Tool {
     }
 
     /**
-     * 初始化scan集合
-     *
+     * 初始化scan
      * @param job
+     * @param columns
+     * @param eventEnum 过滤的事件名,如果为null,则获取全部
      * @return
      */
     protected List<Scan> initScan(Job job, List<String> columns,EventEnum eventEnum) {
@@ -89,12 +90,11 @@ public class TranformerBaseRunner implements Tool {
 
         FilterList filterList = new FilterList();
         /*过滤数据.只分析launch事件*/
-
         filterList.addFilter(getColumnFilter(columns));
-
-        // 只需要page view事件，所以进行过滤
-        filterList.addFilter(new SingleColumnValueFilter(family, Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME), CompareOp.EQUAL, Bytes.toBytes(eventEnum.alias)));
-
+        //过滤事件
+        if(eventEnum!=null){
+            filterList.addFilter(new SingleColumnValueFilter(family, Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME), CompareOp.EQUAL, Bytes.toBytes(eventEnum.alias)));
+        }
         scan.setFilter(filterList);
         scan.setAttribute(Scan.SCAN_ATTRIBUTES_TABLE_NAME, Bytes.toBytes(EventLogConstants.HBASE_NAME_EVENT_LOGS));
         return Lists.newArrayList(scan);
