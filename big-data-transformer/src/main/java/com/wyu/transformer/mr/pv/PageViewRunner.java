@@ -2,7 +2,6 @@ package com.wyu.transformer.mr.pv;
 
 import com.google.common.collect.Lists;
 import com.wyu.commom.EventLogConstants;
-import com.wyu.commom.EventLogConstants.EventEnum;
 import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.StatsUserDimension;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
@@ -132,7 +131,7 @@ public class PageViewRunner implements Tool {
 
         FilterList filterList = new FilterList();
         // 只需要pageview事件
-        filterList.addFilter(new SingleColumnValueFilter(PageViewMapper.family, Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME), CompareOp.EQUAL, Bytes.toBytes(EventLogConstants.EventEnum.PAGEVIEW.alias)));
+        filterList.addFilter(new SingleColumnValueFilter(Bytes.toBytes(EventLogConstants.EVENT_LOGS_FAMILY_NAME), Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME), CompareOp.EQUAL, Bytes.toBytes(EventLogConstants.EventEnum.PAGEVIEW.alias)));
         // 定义mapper中需要获取的列名
         String[] columns = new String[] { EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME, // 获取事件名称
                 EventLogConstants.LOG_COLUMN_NAME_CURRENT_URL, // 当前url

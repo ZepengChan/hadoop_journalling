@@ -3,7 +3,6 @@ package com.wyu.etl.mr.ald;
 import com.wyu.commom.EventLogConstants;
 import com.wyu.commom.EventLogConstants.EventEnum;
 import com.wyu.etl.util.LoggerUtil;
-import org.apache.commons.io.output.NullWriter;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.util.Bytes;
@@ -82,7 +81,7 @@ public class AnalyserLogDataMapper extends Mapper<Object, Text, NullWritable, Pu
         String memberId = clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_MEMBER_ID);
         String serverTime = clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME);
         if (StringUtils.isNotBlank(serverTime)) {
-            /*要求服务器时间部位空*/
+            /*要求服务器时间不为空*/
             clientInfo.remove(EventLogConstants.LOG_COLUMN_NAME_USER_AGENT);
 
             String rowKey = genRowKey(uuid,memberId,event.alias,serverTime);
