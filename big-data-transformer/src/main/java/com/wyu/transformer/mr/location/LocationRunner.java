@@ -1,17 +1,18 @@
 package com.wyu.transformer.mr.location;
 
-import com.wyu.commom.EventLogConstants;
-import com.wyu.commom.EventLogConstants.EventEnum;
-import com.wyu.transformer.model.dim.StatsUserDimension;
-import com.wyu.transformer.model.value.map.TextsOutputValue;
-import com.wyu.transformer.model.value.reduce.LocationReducerOutputValue;
-import com.wyu.transformer.mr.TransformerBaseRunner;
 import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
 import org.apache.hadoop.hbase.filter.Filter;
 import org.apache.hadoop.hbase.filter.FilterList;
 import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.log4j.Logger;
+
+import com.wyu.commom.EventLogConstants;
+import com.wyu.commom.EventLogConstants.EventEnum;
+import com.wyu.transformer.model.dim.StatsLocationDimension;
+import com.wyu.transformer.model.value.map.TextsOutputValue;
+import com.wyu.transformer.model.value.reduce.LocationReducerOutputValue;
+import com.wyu.transformer.mr.TransformerBaseRunner;
 
 /**
  * @author ken
@@ -22,7 +23,7 @@ public class LocationRunner extends TransformerBaseRunner {
 
     public static void main(String[] args) {
         LocationRunner runner = new LocationRunner();
-        runner.setupRunner("Location", LocationRunner.class, LocationMapper.class, LocationReducer.class, StatsUserDimension.class, TextsOutputValue.class, StatsUserDimension.class, LocationReducerOutputValue.class);
+        runner.setupRunner("Location", LocationRunner.class, LocationMapper.class, LocationReducer.class, StatsLocationDimension.class, TextsOutputValue.class, StatsLocationDimension.class, LocationReducerOutputValue.class);
         try {
             runner.startRunner(args);
         } catch (Exception e) {
