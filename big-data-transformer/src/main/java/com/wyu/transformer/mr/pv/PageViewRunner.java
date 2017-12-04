@@ -1,16 +1,17 @@
 package com.wyu.transformer.mr.pv;
 
-import com.wyu.commom.EventLogConstants;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
-import com.wyu.transformer.model.value.map.TimeOutputValue;
-import com.wyu.transformer.model.value.reduce.MapWritableValue;
-import com.wyu.transformer.mr.TransformerBaseRunner;
 import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
 import org.apache.hadoop.hbase.filter.Filter;
 import org.apache.hadoop.hbase.filter.FilterList;
 import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.log4j.Logger;
+
+import com.wyu.commom.EventLogConstants;
+import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.value.reduce.MapWritableValue;
+import com.wyu.transformer.mr.TransformerBaseRunner;
 
 /** 统计PV 入口类
  * @author ken
@@ -22,7 +23,7 @@ public class PageViewRunner extends TransformerBaseRunner {
 
     public static void main(String[] args) {
         PageViewRunner runner = new PageViewRunner();
-        runner.setupRunner("PageViewRunner",PageViewRunner.class,PageViewMapper.class,PageViewReducer.class,StatsUserDimension.class, TimeOutputValue.class, StatsUserDimension.class, MapWritableValue.class);
+        runner.setupRunner("PageViewRunner",PageViewRunner.class,PageViewMapper.class,PageViewReducer.class,StatsUserDimension.class, NullWritable.class, StatsUserDimension.class, MapWritableValue.class);
 
         try {
             runner.startRunner(args);
