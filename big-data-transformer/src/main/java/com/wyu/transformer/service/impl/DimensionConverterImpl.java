@@ -152,6 +152,11 @@ public class DimensionConverterImpl implements IDimensionConverter {
 		}else if (dimension instanceof KpiDimension) {
             KpiDimension kpi = (KpiDimension) dimension;
             psmt.setString(++i, kpi.getKpiName());
+        }else if (dimension instanceof LocationDimension) {
+            LocationDimension location = (LocationDimension) dimension;
+            psmt.setString(++i, location.getCountry());
+            psmt.setString(++i, location.getProvince());
+            psmt.setString(++i, location.getCity());
         }
 	}
 
@@ -236,6 +241,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 			psmt = conn.prepareStatement(sqls[1], Statement.RETURN_GENERATED_KEYS);
 			this.setArgs(psmt, dimension);
 			psmt.execute();
+			System.out.println(psmt.toString());
 			rs = psmt.getGeneratedKeys();
 			if (rs.next()) {
 				return rs.getInt(1);
