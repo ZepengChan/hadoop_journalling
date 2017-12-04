@@ -14,31 +14,31 @@ import java.util.List;
  *
  * @author ken
  */
-public class PlatFormDimension extends BaseDimension {
+public class PlatformDimension extends BaseDimension {
 
     private int id;
     private String platformName;
 
-    public PlatFormDimension() {
+    public PlatformDimension() {
     }
 
 
-    public PlatFormDimension(String platformName) {
+    public PlatformDimension(String platformName) {
         this.platformName = platformName;
     }
 
-    public PlatFormDimension(int id, String platformName) {
+    public PlatformDimension(int id, String platformName) {
         this.id = id;
         this.platformName = platformName;
     }
 
-    public static List<PlatFormDimension> buildList(String platformName) {
+    public static List<PlatformDimension> buildList(String platformName) {
         if (StringUtils.isBlank(platformName)) {
             platformName = GlobalConstants.DEFAULT_VALUE;
         }
-        List<PlatFormDimension> list = new ArrayList<>();
-//        list.add(new PlatFormDimension((GlobalConstants.DEFAULT_VALUE)));
-        list.add(new PlatFormDimension(platformName));
+        List<PlatformDimension> list = new ArrayList<>();
+//        list.add(new PlatformDimension((GlobalConstants.DEFAULT_VALUE)));
+        list.add(new PlatformDimension(platformName));
         return list;
     }
 
@@ -63,7 +63,7 @@ public class PlatFormDimension extends BaseDimension {
         if (this == o) {
             return 0;
         }
-        PlatFormDimension other = (PlatFormDimension) o;
+        PlatformDimension other = (PlatformDimension) o;
         int tmp = Integer.compare(this.id, other.id);
         if (tmp != 0) {
             return tmp;
@@ -93,7 +93,7 @@ public class PlatFormDimension extends BaseDimension {
             return false;
         }
 
-        PlatFormDimension that = (PlatFormDimension) o;
+        PlatformDimension that = (PlatformDimension) o;
 
         return id == that.id && (platformName != null ? platformName.equals(that.platformName) : that.platformName == null);
     }

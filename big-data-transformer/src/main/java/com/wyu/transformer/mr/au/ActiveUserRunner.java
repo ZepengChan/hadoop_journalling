@@ -1,7 +1,7 @@
 package com.wyu.transformer.mr.au;
 
 import com.wyu.commom.EventLogConstants;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.TransformerBaseRunner;
@@ -32,9 +32,10 @@ public class ActiveUserRunner extends TransformerBaseRunner {
     protected Filter fetchHbaseFilter() {
         FilterList filterList = new FilterList();
         // 定义mapper中需要获取的列名
-        String[] columns = new String[] { EventLogConstants.LOG_COLUMN_NAME_UUID, // 用户id
+        String[] columns = new String[] {
+                EventLogConstants.LOG_COLUMN_NAME_UUID, // 用户id
                 EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME, // 服务器时间
-                EventLogConstants.LOG_COLUMN_NAME_PALTFORM, // 平台名称
+                EventLogConstants.LOG_COLUMN_NAME_PLATFORM, // 平台名称
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME, // 浏览器名称
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION // 浏览器版本号
         };

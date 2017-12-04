@@ -2,6 +2,8 @@ package com.wyu.transformer.mr.nu;
 
 import com.wyu.commom.DateEnum;
 import com.wyu.commom.KpiType;
+import com.wyu.transformer.model.dim.StatsCommonDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.mr.TransformerBaseMapper;
@@ -44,7 +46,7 @@ public class NewInstallUserMapper extends TransformerBaseMapper<StatsUserDimensi
 
         DateDimension dateDimension = DateDimension.buildDate(longOfTime, DateEnum.DAY);
 
-        List<PlatFormDimension> platFormDimensionList = PlatFormDimension.buildList(platform);
+        List<PlatformDimension> platformDimensionList = PlatformDimension.buildList(platform);
 
         /*设置date维度*/
 
@@ -58,11 +60,11 @@ public class NewInstallUserMapper extends TransformerBaseMapper<StatsUserDimensi
         String browserVersion = super.getBrowserVersion(value);
         List<BrowserDimension> browserDimensionList = BrowserDimension.buildList(browserName, browserVersion);
 
-        for (PlatFormDimension pf : platFormDimensionList) {
+        for (PlatformDimension pf : platformDimensionList) {
             /*清空Browser内容*/
             statsUserDimension.getBrowser().clean();
             statsCommonDimension.setKpi(newInstallUserKpi);
-            statsCommonDimension.setPlatForm(pf);
+            statsCommonDimension.setPlatform(pf);
             context.write(statsUserDimension, timeOutputValue);
             this.outputRecords++;
             for (BrowserDimension br : browserDimensionList) {

@@ -2,7 +2,7 @@ package com.wyu.transformer.mr.nm;
 
 import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.BaseDimension;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.IOutputCollector;
@@ -29,7 +29,7 @@ public class NewMemberCollector implements IOutputCollector {
         switch (mapWritableValue.getKpi()){
             case NEW_MEMBER:
                 IntWritable v1 = (IntWritable) mapWritableValue.getValue().get(new IntWritable(-1));
-                psmt.setInt(++i,converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+                psmt.setInt(++i,converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatform()));
                 psmt.setInt(++i,converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
                 psmt.setInt(++i,v1.get());
                 psmt.setString(++i,conf.get(GlobalConstants.RUNNING_DATE_PARAMES));
@@ -37,7 +37,7 @@ public class NewMemberCollector implements IOutputCollector {
                 break;
             case BROWSER_NEW_MEMBER:
                 IntWritable v2 = (IntWritable) mapWritableValue.getValue().get(new IntWritable(-1));
-                psmt.setInt(++i,converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+                psmt.setInt(++i,converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatform()));
                 psmt.setInt(++i,converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
                 psmt.setInt(++i,converter.getDimensionIdByValue(statsUser.getBrowser()));
                 psmt.setInt(++i,v2.get());

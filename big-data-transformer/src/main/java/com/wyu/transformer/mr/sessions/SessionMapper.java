@@ -2,6 +2,8 @@ package com.wyu.transformer.mr.sessions;
 
 import com.wyu.commom.DateEnum;
 import com.wyu.commom.KpiType;
+import com.wyu.transformer.model.dim.StatsCommonDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.mr.TransformerBaseMapper;
@@ -46,7 +48,7 @@ public class SessionMapper extends TransformerBaseMapper<StatsUserDimension,Time
 
         DateDimension dateDimension = DateDimension.buildDate(longOfTime, DateEnum.DAY);
 
-        List<PlatFormDimension> platForms = PlatFormDimension.buildList(platform);
+        List<PlatformDimension> platForms = PlatformDimension.buildList(platform);
 
            /*设置date维度*/
         StatsCommonDimension statsCommonDimension = this.outputKey.getStatsCommon();
@@ -57,10 +59,10 @@ public class SessionMapper extends TransformerBaseMapper<StatsUserDimension,Time
         String browserVersion = super.getBrowserVersion(value);
         List<BrowserDimension> browserDimensionList = BrowserDimension.buildList(browserName, browserVersion);
 
-        for (PlatFormDimension pf : platForms) {
+        for (PlatformDimension pf : platForms) {
             this.outputKey.setBrowser(defaultBrowser);
             //设置platform
-            statsCommonDimension.setPlatForm(pf);
+            statsCommonDimension.setPlatform(pf);
             statsCommonDimension.setKpi(sessionKpi);
             //设置kpi
             context.write(this.outputKey, this.outputValue);

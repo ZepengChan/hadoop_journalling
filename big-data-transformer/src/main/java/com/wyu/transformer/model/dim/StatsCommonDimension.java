@@ -1,4 +1,9 @@
-package com.wyu.transformer.model.dim.base;
+package com.wyu.transformer.model.dim;
+
+import com.wyu.transformer.model.dim.base.BaseDimension;
+import com.wyu.transformer.model.dim.base.DateDimension;
+import com.wyu.transformer.model.dim.base.KpiDimension;
+import com.wyu.transformer.model.dim.base.PlatformDimension;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -12,10 +17,10 @@ import java.io.IOException;
 public class StatsCommonDimension extends StatsDimension {
 
     private DateDimension date = new DateDimension();
-    private PlatFormDimension platForm = new PlatFormDimension();
+    private PlatformDimension platForm = new PlatformDimension();
     private KpiDimension kpi = new KpiDimension();
 
-    public StatsCommonDimension(DateDimension date, PlatFormDimension platForm, KpiDimension kpi) {
+    public StatsCommonDimension(DateDimension date, PlatformDimension platForm, KpiDimension kpi) {
         this.date = date;
         this.platForm = platForm;
         this.kpi = kpi;
@@ -32,11 +37,11 @@ public class StatsCommonDimension extends StatsDimension {
         this.date = date;
     }
 
-    public PlatFormDimension getPlatForm() {
+    public PlatformDimension getPlatform() {
         return platForm;
     }
 
-    public void setPlatForm(PlatFormDimension platForm) {
+    public void setPlatform(PlatformDimension platForm) {
         this.platForm = platForm;
     }
 
@@ -56,7 +61,7 @@ public class StatsCommonDimension extends StatsDimension {
      */
     public static StatsCommonDimension clone(StatsCommonDimension dimension) {
         DateDimension date = new DateDimension(dimension.date.getId(), dimension.date.getYear(), dimension.date.getSeason(), dimension.date.getMonth(), dimension.date.getWeek(), dimension.date.getDay(), dimension.date.getType(), dimension.date.getCalendar());
-        PlatFormDimension platForm = new PlatFormDimension(dimension.platForm.getId(), dimension.platForm.getPlatformName());
+        PlatformDimension platForm = new PlatformDimension(dimension.platForm.getId(), dimension.platForm.getPlatformName());
         KpiDimension kpi = new KpiDimension(dimension.kpi.getId(), dimension.kpi.getKpiName());
         return new StatsCommonDimension(date, platForm, kpi);
     }

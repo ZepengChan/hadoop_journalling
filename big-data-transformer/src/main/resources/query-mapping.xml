@@ -226,4 +226,20 @@
 		</value>
 	</property>
 
+	<property>
+		<name>location</name>
+		<value>
+			INSERT INTO `stats_device_location`(
+			`platform_dimension_id`,
+			`date_dimension_id`,
+			`location_dimension_id`,
+			`active_users`,
+			`sessions`,
+			`bounce_sessions`,
+			`created`
+			) VALUES(?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE
+			`active_users`=?, `sessions`=?, `bounce_sessions`=?
+		</value>
+	</property>
+
 </configuration>

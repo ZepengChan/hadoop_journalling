@@ -3,7 +3,7 @@ package com.wyu.transformer.mr.sessions;
 import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.BaseDimension;
 import com.wyu.transformer.model.dim.base.KpiDimension;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.IOutputCollector;
@@ -31,7 +31,7 @@ public class SessionsCollector implements IOutputCollector {
 		switch (mapWritableValue.getKpi()) {
 		case HOURLY_SESSIONS_LENGTH:
 		case HOURLY_SESSIONS:
-			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatform()));
 			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
 			pstmt.setInt(++i, converter.getDimensionIdByValue(new KpiDimension(mapWritableValue.getKpi().name)));
 			// 设置每个小时的情况
@@ -48,7 +48,7 @@ public class SessionsCollector implements IOutputCollector {
 			int sessions = ((IntWritable) (map.get(new IntWritable(-1)))).get();
 			int sessionsLength = ((IntWritable) (map.get(new IntWritable(-2)))).get();
 
-			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatform()));
 			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
 			pstmt.setInt(++i, sessions); // 会话个数
 			pstmt.setInt(++i, sessionsLength); // 会话长度
@@ -59,7 +59,7 @@ public class SessionsCollector implements IOutputCollector {
 		case BROWSER_SESSIONS:
 			sessions = ((IntWritable) (map.get(new IntWritable(-1)))).get();
             sessionsLength = ((IntWritable) (map.get(new IntWritable(-2)))).get();
-			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatform()));
 			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
 			pstmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getBrowser()));
 			pstmt.setInt(++i, sessions); // 会话个数

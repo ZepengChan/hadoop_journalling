@@ -2,6 +2,8 @@ package com.wyu.transformer.mr.am;
 
 import com.wyu.commom.DateEnum;
 import com.wyu.commom.KpiType;
+import com.wyu.transformer.model.dim.StatsCommonDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.mr.TransformerBaseMapper;
@@ -51,7 +53,7 @@ public class ActiveMemberMapper extends TransformerBaseMapper<StatsUserDimension
         this.outputValue.setId(memberId);
 
         //创建platform
-        List<PlatFormDimension> platForms = PlatFormDimension.buildList(platform);
+        List<PlatformDimension> platForms = PlatformDimension.buildList(platform);
 
         //获取浏览器相关信息
         String browserName = super.getBrowserName(value);
@@ -61,13 +63,13 @@ public class ActiveMemberMapper extends TransformerBaseMapper<StatsUserDimension
         StatsCommonDimension statsCommonDimension = this.outputKey.getStatsCommon();
         //设置date
         statsCommonDimension.setDate(dateDimension);
-        for (PlatFormDimension pf : platForms) {
+        for (PlatformDimension pf : platForms) {
             this.outputKey.setBrowser(defaultBrowser);
 
             //设置kpi
             statsCommonDimension.setKpi(activeMemberKpi);
             //设置platform
-            statsCommonDimension.setPlatForm(pf);
+            statsCommonDimension.setPlatform(pf);
             context.write(this.outputKey, this.outputValue);
             this.outputRecords++;
 

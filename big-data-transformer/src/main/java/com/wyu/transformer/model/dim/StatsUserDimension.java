@@ -1,4 +1,7 @@
-package com.wyu.transformer.model.dim.base;
+package com.wyu.transformer.model.dim;
+
+import com.wyu.transformer.model.dim.base.BaseDimension;
+import com.wyu.transformer.model.dim.base.BrowserDimension;
 
 import java.io.DataInput;
 import java.io.DataOutput;

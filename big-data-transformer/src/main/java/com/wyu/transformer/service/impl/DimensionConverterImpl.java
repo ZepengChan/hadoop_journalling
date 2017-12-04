@@ -1,25 +1,14 @@
 package com.wyu.transformer.service.impl;
 
+import com.wyu.transformer.model.dim.base.*;
+import com.wyu.transformer.service.IDimensionConverter;
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.apache.log4j.Logger;
-
-import com.wyu.transformer.model.dim.base.BaseDimension;
-import com.wyu.transformer.model.dim.base.BrowserDimension;
-import com.wyu.transformer.model.dim.base.DateDimension;
-import com.wyu.transformer.model.dim.base.KpiDimension;
-import com.wyu.transformer.model.dim.base.PlatFormDimension;
-import com.wyu.transformer.service.IDimensionConverter;
 
 /**
  * 公共维度信息数据库操作类
@@ -63,13 +52,15 @@ public class DimensionConverterImpl implements IDimensionConverter {
 			String[] sql;
 			if (dimension instanceof DateDimension) {
 				sql = buildDateSql();
-			} else if (dimension instanceof PlatFormDimension) {
+			} else if (dimension instanceof PlatformDimension) {
 				sql = buildPlatformSql();
 			} else if (dimension instanceof BrowserDimension) {
 				sql = buildBrowserSql();
 			} else if (dimension instanceof KpiDimension) {
 				sql = this.buildKpiSql();
-			} else {
+			} else if (dimension instanceof LocationDimension) {
+				sql = this.buildLocationSql();
+			}else {
 				throw new IOException("不支持此dimensionId的获取：" + dimension.getClass());
 			}
 			int id = 0;
@@ -115,9 +106,9 @@ public class DimensionConverterImpl implements IDimensionConverter {
 			DateDimension date = (DateDimension) dimension;
 			sb.append(date.getYear()).append(date.getSeason()).append(date.getMonth());
 			sb.append(date.getWeek()).append(date.getDay()).append(date.getType());
-		} else if (dimension instanceof PlatFormDimension) {
+		} else if (dimension instanceof PlatformDimension) {
 			sb.append("platform_dimension");
-			PlatFormDimension platForm = (PlatFormDimension) dimension;
+			PlatformDimension platForm = (PlatformDimension) dimension;
 			sb.append(platForm.getPlatformName());
 		} else if (dimension instanceof BrowserDimension) {
 			sb.append("browser_dimension");
@@ -127,6 +118,10 @@ public class DimensionConverterImpl implements IDimensionConverter {
 			sb.append("kpi_dimension");
 			KpiDimension kpi = (KpiDimension) dimension;
 			sb.append(kpi.getKpiName());
+		}else if (dimension instanceof LocationDimension) {
+			sb.append("location_dimension");
+			LocationDimension location = (LocationDimension) dimension;
+			sb.append(location.getCountry()).append(location.getProvince()).append(location.getCity());
 		}
 
 		if (sb.length() == 0) {
@@ -147,8 +142,8 @@ public class DimensionConverterImpl implements IDimensionConverter {
 			psmt.setInt(++i, date.getDay());
 			psmt.setString(++i, date.getType());
 			psmt.setDate(++i, new Date(date.getCalendar().getTime()));
-		} else if (dimension instanceof PlatFormDimension) {
-			PlatFormDimension platForm = (PlatFormDimension) dimension;
+		} else if (dimension instanceof PlatformDimension) {
+			PlatformDimension platForm = (PlatformDimension) dimension;
 			psmt.setString(++i, platForm.getPlatformName());
 		} else if (dimension instanceof BrowserDimension) {
 			BrowserDimension browser = (BrowserDimension) dimension;
@@ -201,6 +196,17 @@ public class DimensionConverterImpl implements IDimensionConverter {
 	private String[] buildKpiSql() {
 		String querySql = "SELECT `id` FROM `dimension_kpi` WHERE `kpi_name` = ?";
 		String insertSql = "INSERT INTO `dimension_kpi`(`kpi_name`) VALUES(?)";
+		return new String[] { querySql, insertSql };
+	}
+
+	/**
+	 * 创建location dimension相关sql
+	 *
+	 * @return
+	 */
+	private String[] buildLocationSql() {
+		String querySql = "SELECT `id` FROM `dimension_location` WHERE `country` = ? AND `province` = ? AND `city` = ?";
+		String insertSql = "INSERT INTO `dimension_location`(`country`,`province`,`city`) VALUES(?,?,?)";
 		return new String[] { querySql, insertSql };
 	}
 
