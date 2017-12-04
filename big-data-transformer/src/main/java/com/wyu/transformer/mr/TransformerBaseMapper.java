@@ -14,9 +14,9 @@ import java.io.IOException;
  * @author ken
  * @date 2017/12/3
  */
-public class TranformerBaseMapper<KEYOUT,VALUEOUT> extends TableMapper<KEYOUT,VALUEOUT>{
+public class TransformerBaseMapper<KEYOUT,VALUEOUT> extends TableMapper<KEYOUT,VALUEOUT>{
 
-    private static final Logger logger = Logger.getLogger(TranformerBaseMapper.class);
+    private static final Logger logger = Logger.getLogger(TransformerBaseMapper.class);
     protected Configuration conf = null;
     private long startTime = System.currentTimeMillis();
     //输入数

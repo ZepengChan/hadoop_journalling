@@ -5,84 +5,51 @@ import com.wyu.commom.EventLogConstants.EventEnum;
 import com.wyu.transformer.model.dim.base.StatsUserDimension;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
-import com.wyu.transformer.mr.TranformerBaseRunner;
-import com.wyu.transformer.mr.TransformerOutputFormat;
-import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.client.Scan;
-import org.apache.hadoop.hbase.mapreduce.TableMapReduceUtil;
+import com.wyu.transformer.mr.TransformerBaseRunner;
+import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
+import org.apache.hadoop.hbase.filter.Filter;
+import org.apache.hadoop.hbase.filter.FilterList;
+import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.util.ToolRunner;
 import org.apache.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @author ken
- * @date 2017/11/26
+ * 统计active member数量的执行入口类
+ * 
+ * @author gerry
+ *
  */
-public class ActiveMemberRunner extends TranformerBaseRunner {
-
+public class ActiveMemberRunner extends TransformerBaseRunner {
     private static final Logger logger = Logger.getLogger(ActiveMemberRunner.class);
 
     public static void main(String[] args) {
+        ActiveMemberRunner runner = new ActiveMemberRunner();
+        runner.setupRunner("active_member",ActiveMemberRunner.class,ActiveMemberMapper.class,ActiveMemberReducer.class,StatsUserDimension.class, TimeOutputValue.class, StatsUserDimension.class, MapWritableValue.class);
+
         try {
-            ToolRunner.run(new ActiveMemberRunner(),args);
+            runner.startRunner(args);
         } catch (Exception e) {
-            logger.error("运行active_user出现异常!"+ e);
-            throw  new RuntimeException(e);
+            logger.error("运行active_member任务出现异常", e);
+            throw new RuntimeException(e);
         }
     }
 
     @Override
-    public int run(String[] args) throws Exception {
-        Configuration conf = this.getConf();
-
-        /*处理参数*/
-        super.processArgs(conf, args);
-
-        Job job = Job.getInstance(conf, "active_member");
-
-        job.setJarByClass(ActiveMemberRunner.class);
-        /*本地运行*/
-        TableMapReduceUtil.initTableMapperJob(initScan(job), ActiveMemberMapper.class, StatsUserDimension.class, TimeOutputValue.class, job, false);
-        /*集群运行*/
-//        TableMapReduceUtil.initTableMapperJob(initScan(job),ActiveMemberMapper.class, StatsUserDimension.class, TimeOutputValue.class,job);
-
-        job.setReducerClass(ActiveMemberReducer.class);
-        job.setOutputKeyClass(StatsUserDimension.class);
-        job.setOutputValueClass(MapWritableValue.class);
-        job.setOutputFormatClass(TransformerOutputFormat.class);
-        // 开始毫秒数
-        long startTime = System.currentTimeMillis();
-        try {
-            return job.waitForCompletion(true) ? 0 : -1;
-        } finally {
-            // 结束的毫秒数
-            long endTime = System.currentTimeMillis();
-            logger.info("Job<" + job.getJobName() + ">是否执行成功:" + job.isSuccessful() + "; 开始时间:" + startTime + "; 结束时间:" + endTime + "; 用时:" + (endTime - startTime) + "ms");
-        }
+    protected Filter fetchHbaseFilter() {
+        FilterList filterList = new FilterList();
+        // 定义mapper中需要获取的列名
+        String[] columns = new String[] { EventLogConstants.LOG_COLUMN_NAME_MEMBER_ID, // 会员id
+                EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME, // 服务器时间
+                EventLogConstants.LOG_COLUMN_NAME_PALTFORM, // 平台名称
+                EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME, // 浏览器名称
+                EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION, // 浏览器版本号
+                EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME // 添加一个事件名称获取列，在使用singlecolumnvaluefilter的时候必须指定对应的列是一个返回列
+        };
+        filterList.addFilter(this.getColumnFilter(columns));
+        // 只需要page view事件，所以进行过滤
+        filterList.addFilter(new SingleColumnValueFilter(Bytes.toBytes(EventLogConstants.EVENT_LOGS_FAMILY_NAME), Bytes.toBytes(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME), CompareOp.EQUAL, Bytes.toBytes(EventEnum.PAGEVIEW.alias)));
+        return filterList;
     }
 
 
-
-    /**
-     * 初始化scan集合
-     *
-     * @param job
-     * @return
-     */
-    private List<Scan> initScan(Job job) {
-
-        List<String> columns = new ArrayList<>();
-        columns.add(EventLogConstants.LOG_COLUMN_NAME_MEMBER_ID);
-        columns.add(EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME);
-        columns.add(EventLogConstants.LOG_COLUMN_NAME_PALTFORM);
-        columns.add(EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME);
-        columns.add(EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION);
-        columns.add(EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME);
-
-        return super.initScan(job,columns,EventEnum.PAGEVIEW);
-    }
 }

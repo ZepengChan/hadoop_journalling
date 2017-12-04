@@ -4,7 +4,7 @@ import com.wyu.commom.DateEnum;
 import com.wyu.commom.KpiType;
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
-import com.wyu.transformer.mr.TranformerBaseMapper;
+import com.wyu.transformer.mr.TransformerBaseMapper;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
@@ -18,7 +18,7 @@ import java.util.List;
  * @author ken
  * @date 2017/11/28
  */
-public class SessionMapper extends TranformerBaseMapper<StatsUserDimension,TimeOutputValue> {
+public class SessionMapper extends TransformerBaseMapper<StatsUserDimension,TimeOutputValue> {
 
     private static final Logger logger = Logger.getLogger(SessionMapper.class);
     private StatsUserDimension outputKey = new StatsUserDimension();

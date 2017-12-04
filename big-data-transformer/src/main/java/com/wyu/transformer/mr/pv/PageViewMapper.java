@@ -3,7 +3,7 @@ package com.wyu.transformer.mr.pv;
 import com.wyu.commom.DateEnum;
 import com.wyu.commom.KpiType;
 import com.wyu.transformer.model.dim.base.*;
-import com.wyu.transformer.mr.TranformerBaseMapper;
+import com.wyu.transformer.mr.TransformerBaseMapper;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
@@ -19,7 +19,7 @@ import java.util.List;
  * @author ken
  * @date 2017/11/30
  */
-public class PageViewMapper extends TranformerBaseMapper<StatsUserDimension,NullWritable> {
+public class PageViewMapper extends TransformerBaseMapper<StatsUserDimension,NullWritable> {
     private static final Logger logger = Logger.getLogger(PageViewMapper.class);
     private StatsUserDimension statsUserDimension = new StatsUserDimension();
     private  KpiDimension websitePageViewDimension = new KpiDimension(KpiType.WEBSITE_PAGEVIEW.name);

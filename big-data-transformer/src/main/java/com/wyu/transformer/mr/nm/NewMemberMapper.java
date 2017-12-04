@@ -5,7 +5,7 @@ import com.wyu.commom.GlobalConstants;
 import com.wyu.commom.KpiType;
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
-import com.wyu.transformer.mr.TranformerBaseMapper;
+import com.wyu.transformer.mr.TransformerBaseMapper;
 import com.wyu.transformer.mr.am.ActiveMemberMapper;
 import com.wyu.transformer.util.MemberUtil;
 import com.wyu.util.JdbcManager;
@@ -26,7 +26,7 @@ import java.util.List;
  * @author ken
  * @date 2017/11/27
  */
-public class NewMemberMapper extends TranformerBaseMapper<StatsUserDimension, TimeOutputValue> {
+public class NewMemberMapper extends TransformerBaseMapper<StatsUserDimension, TimeOutputValue> {
 
     private static final Logger logger = Logger.getLogger(ActiveMemberMapper.class);
     private StatsUserDimension outputKey = new StatsUserDimension();

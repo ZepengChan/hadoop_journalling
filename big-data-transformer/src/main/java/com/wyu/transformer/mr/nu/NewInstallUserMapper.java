@@ -4,7 +4,7 @@ import com.wyu.commom.DateEnum;
 import com.wyu.commom.KpiType;
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
-import com.wyu.transformer.mr.TranformerBaseMapper;
+import com.wyu.transformer.mr.TransformerBaseMapper;
 import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
@@ -18,7 +18,7 @@ import java.util.List;
  * 自定义的计算新用户的mapper类
  * @author ken
  */
-public class NewInstallUserMapper extends TranformerBaseMapper<StatsUserDimension, TimeOutputValue> {
+public class NewInstallUserMapper extends TransformerBaseMapper<StatsUserDimension, TimeOutputValue> {
 
     private static final Logger logger = Logger.getLogger(NewInstallUserMapper.class);
     private StatsUserDimension statsUserDimension = new StatsUserDimension();
