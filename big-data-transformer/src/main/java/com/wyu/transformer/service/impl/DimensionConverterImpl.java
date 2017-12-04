@@ -63,7 +63,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 			}else {
 				throw new IOException("不支持此dimensionId的获取：" + dimension.getClass());
 			}
-			int id = 0;
+			int id ;
 			synchronized (this) {
 				id = this.executeSql(conn, cacheKey, sql, dimension);
 			}
