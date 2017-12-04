@@ -5,7 +5,7 @@ import com.wyu.commom.EventLogConstants;
 import com.wyu.commom.EventLogConstants.EventEnum;
 import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.DateDimension;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.TransformerBaseRunner;
@@ -206,7 +206,7 @@ public class NewInstallUserRunner extends TransformerBaseRunner {
                 EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME,
                 EventLogConstants.LOG_COLUMN_NAME_UUID,
                 EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME,
-                EventLogConstants.LOG_COLUMN_NAME_PALTFORM,
+                EventLogConstants.LOG_COLUMN_NAME_PLATFORM,
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME,
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION
         };

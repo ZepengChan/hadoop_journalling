@@ -2,6 +2,8 @@ package com.wyu.transformer.mr.pv;
 
 import com.wyu.commom.DateEnum;
 import com.wyu.commom.KpiType;
+import com.wyu.transformer.model.dim.StatsCommonDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.mr.TransformerBaseMapper;
 import org.apache.commons.lang.StringUtils;
@@ -39,7 +41,7 @@ public class PageViewMapper extends TransformerBaseMapper<StatsUserDimension,Nul
         }
 
         // 3. 创建platform维度信息
-        List<PlatFormDimension> platforms = PlatFormDimension.buildList(platform);
+        List<PlatformDimension> platforms = PlatformDimension.buildList(platform);
         // 4. 创建browser维度信息
         String browserName = super.getBrowserName(value);
         String browserVersion = super.getBrowserVersion(value);
@@ -51,8 +53,8 @@ public class PageViewMapper extends TransformerBaseMapper<StatsUserDimension,Nul
         StatsCommonDimension statsCommon = this.statsUserDimension.getStatsCommon();
         statsCommon.setDate(dayOfDimenion); // 设置date dimension
         statsCommon.setKpi(this.websitePageViewDimension); // 设置kpi dimension
-        for (PlatFormDimension pf : platforms) {
-            statsCommon.setPlatForm(pf); // 设置platform dimension
+        for (PlatformDimension pf : platforms) {
+            statsCommon.setPlatform(pf); // 设置platform dimension
             for (BrowserDimension br : browsers) {
                 this.statsUserDimension.setBrowser(br); // 设置browser dimension
                 // 输出

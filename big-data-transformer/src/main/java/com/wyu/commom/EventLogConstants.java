@@ -138,7 +138,7 @@ public class EventLogConstants {
     /**
      * 平台
      */
-    public static final String LOG_COLUMN_NAME_PALTFORM = "pl";
+    public static final String LOG_COLUMN_NAME_PLATFORM = "pl";
     /**
      * 当前url
      */

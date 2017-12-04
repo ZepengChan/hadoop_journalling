@@ -1,7 +1,7 @@
 package com.wyu.transformer.mr.am;
 
 import com.wyu.commom.KpiType;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import org.apache.hadoop.io.IntWritable;

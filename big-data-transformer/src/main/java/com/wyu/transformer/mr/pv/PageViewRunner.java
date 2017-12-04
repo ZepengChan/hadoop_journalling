@@ -9,7 +9,7 @@ import org.apache.hadoop.io.NullWritable;
 import org.apache.log4j.Logger;
 
 import com.wyu.commom.EventLogConstants;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.TransformerBaseRunner;
 
@@ -42,7 +42,7 @@ public class PageViewRunner extends TransformerBaseRunner {
                 EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME, // 获取事件名称
                 EventLogConstants.LOG_COLUMN_NAME_CURRENT_URL, // 当前url
                 EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME, // 服务器时间
-                EventLogConstants.LOG_COLUMN_NAME_PALTFORM, // 平台名称
+                EventLogConstants.LOG_COLUMN_NAME_PLATFORM, // 平台名称
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME, // 浏览器名称
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION // 浏览器版本号
         };

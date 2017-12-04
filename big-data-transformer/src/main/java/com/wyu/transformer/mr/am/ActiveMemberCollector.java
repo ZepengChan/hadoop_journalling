@@ -3,7 +3,7 @@ package com.wyu.transformer.mr.am;
 import com.wyu.commom.GlobalConstants;
 import com.wyu.commom.KpiType;
 import com.wyu.transformer.model.dim.base.BaseDimension;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.IOutputCollector;
@@ -27,7 +27,7 @@ public class ActiveMemberCollector  implements IOutputCollector {
         IntWritable activeMembers = (IntWritable) ((MapWritableValue) value).getValue().get(new IntWritable(-1));
 
         int i = 0;
-        psmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatForm()));
+        psmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getPlatform()));
         psmt.setInt(++i, converter.getDimensionIdByValue(statsUser.getStatsCommon().getDate()));
         if (KpiType.BROWSER_ACTIVE_MEMBER.name.equals(statsUser.getStatsCommon().getKpi().getKpiName())) {
             // 表示输出结果是统计browser active member的，那么进行browser维度信息设置

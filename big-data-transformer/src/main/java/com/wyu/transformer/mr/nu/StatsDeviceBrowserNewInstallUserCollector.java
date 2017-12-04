@@ -2,7 +2,7 @@ package com.wyu.transformer.mr.nu;
 
 import com.wyu.commom.GlobalConstants;
 import com.wyu.transformer.model.dim.base.BaseDimension;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.IOutputCollector;
@@ -26,7 +26,7 @@ public class StatsDeviceBrowserNewInstallUserCollector implements IOutputCollect
         IntWritable newInstallUsers = (IntWritable) mapWritableValue.getValue().get(new IntWritable(-1));
 
         int i = 0;
-        psmt.setInt(++i,converter.getDimensionIdByValue(statsUserDimension.getStatsCommon().getPlatForm()));
+        psmt.setInt(++i,converter.getDimensionIdByValue(statsUserDimension.getStatsCommon().getPlatform()));
         psmt.setInt(++i,converter.getDimensionIdByValue(statsUserDimension.getStatsCommon().getDate()));
         psmt.setInt(++i,converter.getDimensionIdByValue(statsUserDimension.getBrowser()));
         psmt.setInt(++i,newInstallUsers.get());

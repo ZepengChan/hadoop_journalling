@@ -2,7 +2,7 @@ package com.wyu.transformer.mr.am;
 
 import com.wyu.commom.EventLogConstants;
 import com.wyu.commom.EventLogConstants.EventEnum;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.transformer.mr.TransformerBaseRunner;
@@ -40,7 +40,7 @@ public class ActiveMemberRunner extends TransformerBaseRunner {
         // 定义mapper中需要获取的列名
         String[] columns = new String[] { EventLogConstants.LOG_COLUMN_NAME_MEMBER_ID, // 会员id
                 EventLogConstants.LOG_COLUMN_NAME_SERVER_TIME, // 服务器时间
-                EventLogConstants.LOG_COLUMN_NAME_PALTFORM, // 平台名称
+                EventLogConstants.LOG_COLUMN_NAME_PLATFORM, // 平台名称
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_NAME, // 浏览器名称
                 EventLogConstants.LOG_COLUMN_NAME_BROWSER_VERSION, // 浏览器版本号
                 EventLogConstants.LOG_COLUMN_NAME_EVENT_NAME // 添加一个事件名称获取列，在使用singlecolumnvaluefilter的时候必须指定对应的列是一个返回列

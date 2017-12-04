@@ -3,7 +3,7 @@ package com.wyu.transformer.mr.sessions;
 import com.wyu.commom.DateEnum;
 import com.wyu.commom.GlobalConstants;
 import com.wyu.commom.KpiType;
-import com.wyu.transformer.model.dim.base.StatsUserDimension;
+import com.wyu.transformer.model.dim.StatsUserDimension;
 import com.wyu.transformer.model.value.map.TimeOutputValue;
 import com.wyu.transformer.model.value.reduce.MapWritableValue;
 import com.wyu.util.TimeUtil;
