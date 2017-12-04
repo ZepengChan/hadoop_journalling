@@ -31,7 +31,7 @@ public class PageViewMapper extends TransformerBaseMapper<StatsUserDimension,Nul
     	 // 1. 获取platform、time、url
         String platform = super.getPlatform(value);
         String serverTime = super.getServerTime(value);
-        String url = super.getUrl(value);
+        String url = super.getCurrentUrl(value);
 
         // 2. 过滤数据
         if (StringUtils.isBlank(platform) || StringUtils.isBlank(url) || StringUtils.isBlank(serverTime) || !StringUtils.isNumeric(serverTime.trim())) {
