@@ -79,6 +79,9 @@ public class LoggerUtil {
                 clientInfo.put(EventLogConstants.LOG_COLUMN_NAME_PROVINCE, info.getProvince());
                 clientInfo.put(EventLogConstants.LOG_COLUMN_NAME_CITY, info.getCity());
             }
+            System.out.println(clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_COUNTRY));
+            System.out.println(clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_PROVINCE));
+            System.out.println(clientInfo.get(EventLogConstants.LOG_COLUMN_NAME_CITY));
         }
     }
 
