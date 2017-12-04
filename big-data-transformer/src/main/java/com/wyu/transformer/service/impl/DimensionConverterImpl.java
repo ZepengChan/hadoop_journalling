@@ -19,7 +19,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 
 	private static final Logger logger = Logger.getLogger(DimensionConverterImpl.class);
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://192.168.123.107:3306/report";
+	private static final String URL = "jdbc:mysql://192.168.123.107:3306/report?useUnicode=true&characterEncoding=UTF8";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "123456";
 	static {
