@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * 统计inbound相关信息时候维度类
  * 
- * @author gerry
+ * @author ken
  *
  */
 public class StatsInboundDimension extends StatsDimension {

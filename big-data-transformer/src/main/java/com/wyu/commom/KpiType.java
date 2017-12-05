@@ -35,6 +35,7 @@ public enum KpiType {
     LOCATION("location"),
 
     INBOUND("inbound"),
+    INBOUND_BOUNCE("inbound_bounce")
     ;
 
 

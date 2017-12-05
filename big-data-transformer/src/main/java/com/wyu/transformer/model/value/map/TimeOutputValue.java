@@ -8,6 +8,9 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 
+/**
+ *
+ */
 public class TimeOutputValue extends BaseStatsValueWritable {
 
     private String id;
