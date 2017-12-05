@@ -242,4 +242,32 @@
 		</value>
 	</property>
 
+	<property>
+		<name>inbound</name>
+		<value>
+			INSERT INTO `stats_inbound`(
+			`platform_dimension_id`,
+			`date_dimension_id`,
+			`inbound_dimension_id`,
+			`active_users`,
+			`sessions`,
+			`created`
+			) VALUES(?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE
+			`active_users`=?, `sessions`=?
+		</value>
+	</property>
+
+	<property>
+		<name>inbound_bounce</name>
+		<value>
+			INSERT INTO `stats_inbound`(
+			`platform_dimension_id`,
+			`date_dimension_id`,
+			`inbound_dimension_id`,
+			`bounce_sessions`,
+			`created`
+			) VALUES(?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE `bounce_sessions`=?
+		</value>
+	</property>
+
 </configuration>

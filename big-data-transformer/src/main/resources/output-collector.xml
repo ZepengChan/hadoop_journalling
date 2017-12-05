@@ -78,4 +78,14 @@
 		<name>collector_location</name>
 		<value>com.wyu.transformer.mr.location.LocationCollector</value>
 	</property>
+
+	<property>
+		<name>collector_inbound</name>
+		<value>com.wyu.transformer.mr.inbound.InboundCollector</value>
+	</property>
+
+	<property>
+		<name>collector_inbound_bounce</name>
+		<value>com.wyu.transformer.mr.inbound.bounce.InboundBounceCollector</value>
+	</property>
 </configuration>
