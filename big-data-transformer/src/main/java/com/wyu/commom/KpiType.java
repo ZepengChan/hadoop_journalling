@@ -33,6 +33,8 @@ public enum KpiType {
     WEBSITE_PAGEVIEW("website_pageview"),
 
     LOCATION("location"),
+
+    INBOUND("inbound"),
     ;
 
 

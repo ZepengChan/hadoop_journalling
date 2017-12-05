@@ -2,6 +2,7 @@ package com.wyu.transformer.service.impl;
 
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.service.IDimensionConverter;
+import com.wyu.util.JdbcManager;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -71,15 +72,6 @@ public class DimensionConverterImpl implements IDimensionConverter {
 		} catch (Exception e) {
 			logger.error("操作数据库异常", e);
 			throw new IOException(e);
-		} finally {
-			if (conn != null) {
-
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
 		}
 	}
 
@@ -247,13 +239,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 				return rs.getInt(1);
 			}
 		} finally {
-			if (rs != null) {
-
-				rs.close();
-			}
-			if (psmt != null) {
-				psmt.close();
-			}
+			JdbcManager.close(conn,psmt,rs);
 		}
 		throw new RuntimeException("从数据库获取id失败！");
 	}
