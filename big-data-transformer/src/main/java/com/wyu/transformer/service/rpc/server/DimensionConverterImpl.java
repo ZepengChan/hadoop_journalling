@@ -21,14 +21,14 @@ public class DimensionConverterImpl implements IDimensionConverter {
 
 	private static final Logger logger = Logger.getLogger(DimensionConverterImpl.class);
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://192.168.123.107:3306/report?useUnicode=true&characterEncoding=UTF8";
+	private static final String URL = "jdbc:mysql://192.168.1.106:3306/report?useUnicode=true&characterEncoding=UTF8";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "123456";
 	static {
 		try {
 			Class.forName(DRIVER);
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			logger.error("无mysql驱动包！");
 		}
 	}
 
@@ -118,6 +118,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 		}
 
 		if (sb.length() == 0) {
+			logger.error("无法创建指定dimension的cacheKey" + dimension.getClass());
 			throw new RuntimeException("无法创建指定dimension的cacheKey" + dimension.getClass());
 		}
 		return sb.toString();
@@ -242,6 +243,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 		} finally {
 			JdbcManager.close(conn,psmt,rs);
 		}
+		logger.error("从数据库获取id失败！");
 		throw new RuntimeException("从数据库获取id失败！");
 	}
 

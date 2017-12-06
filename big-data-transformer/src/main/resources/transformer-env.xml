@@ -13,7 +13,7 @@
 
 	<property>
 	  <name>mysql.report.url</name>
-	  <value>jdbc:mysql://192.168.123.107:3306/report?useUnicode=true&amp;characterEncoding=utf8</value>
+	  <value>jdbc:mysql://192.168.1.106:3306/report?useUnicode=true&amp;characterEncoding=utf8</value>
 	</property>	
 
 	<property>
