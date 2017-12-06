@@ -26,7 +26,6 @@ public class InboundBounceSecondSort {
             super(StatsInboundBounceDimension.class, true);
         }
 
-        @SuppressWarnings("rawtypes")
         @Override
         public int compare(WritableComparable a, WritableComparable b) {
             StatsInboundBounceDimension key1 = (StatsInboundBounceDimension) a;

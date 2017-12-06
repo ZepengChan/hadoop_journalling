@@ -1,4 +1,4 @@
-package com.wyu.transformer.service.impl;
+package com.wyu.transformer.service.rpc.server;
 
 import com.wyu.transformer.model.dim.base.*;
 import com.wyu.transformer.service.rpc.IDimensionConverter;
@@ -92,7 +92,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 	 * @param dimension
 	 * @return
 	 */
-	private String buildCacheKey(BaseDimension dimension) {
+	public static String buildCacheKey(BaseDimension dimension) {
 		StringBuilder sb = new StringBuilder();
 		if (dimension instanceof DateDimension) {
 			sb.append("date_dimension");
@@ -188,7 +188,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 
 	/**
 	 * 创建kpi dimension相关sql
-	 * 
+	 *
 	 * @return
 	 */
 	private String[] buildKpiSql() {
@@ -247,7 +247,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 
 	@Override
 	public long getProtocolVersion(String protocol, long clientVersion) throws IOException {
-		return 0;
+		return IDimensionConverter.versionId;
 	}
 
 	@Override

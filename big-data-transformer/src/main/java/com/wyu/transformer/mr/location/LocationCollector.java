@@ -6,7 +6,7 @@ import com.wyu.transformer.model.dim.base.BaseDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.model.value.reduce.LocationReducerOutputValue;
 import com.wyu.transformer.mr.IOutputCollector;
-import com.wyu.transformer.service.IDimensionConverter;
+import com.wyu.transformer.service.rpc.IDimensionConverter;
 import org.apache.hadoop.conf.Configuration;
 
 import java.io.IOException;

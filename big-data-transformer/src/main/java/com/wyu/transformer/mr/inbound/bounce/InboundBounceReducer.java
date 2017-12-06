@@ -26,15 +26,15 @@ public class InboundBounceReducer extends Reducer<StatsInboundBounceDimension, I
     @Override
     protected void reduce(StatsInboundBounceDimension key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
         String preSid = ""; // 前一条记录的会话id
-        String curSid = ""; // 当前会话id
+        String curSid; // 当前会话id
         // 当前inbound id
-        int curInboundId = InboundBounceMapper.DEFAULT_INBOUND_ID;
+        int curInboundId;
         // 前一个记录的inbound id
         int preInboundId = InboundBounceMapper.DEFAULT_INBOUND_ID;
         boolean isBounceVisit = true; // true表示会话是一个跳出会话，否则不是跳出会话
         boolean isNewSession = true; // 表示是一个新的会话
 
-        Map<Integer, InboundBounceReducerValue> map = new HashMap<Integer, InboundBounceReducerValue>();
+        Map<Integer, InboundBounceReducerValue> map = new HashMap<>();
         map.put(InboundDimensionService.ALL_OF_INBOUND_ID, new InboundBounceReducerValue()); // 给一个默认值
 
         for (IntWritable value : values) {

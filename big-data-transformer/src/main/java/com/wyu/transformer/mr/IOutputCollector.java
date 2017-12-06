@@ -2,7 +2,7 @@ package com.wyu.transformer.mr;
 
 import com.wyu.transformer.model.dim.base.BaseDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
-import com.wyu.transformer.service.IDimensionConverter;
+import com.wyu.transformer.service.rpc.IDimensionConverter;
 import org.apache.hadoop.conf.Configuration;
 
 import java.io.IOException;

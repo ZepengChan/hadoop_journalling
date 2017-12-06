@@ -4,7 +4,7 @@ import com.wyu.commom.GlobalConstants;
 import com.wyu.commom.KpiType;
 import com.wyu.transformer.model.dim.base.BaseDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
-import com.wyu.transformer.service.IDimensionConverter;
+import com.wyu.transformer.service.rpc.IDimensionConverter;
 import com.wyu.transformer.service.impl.DimensionConverterImpl;
 import com.wyu.util.JdbcManager;
 import org.apache.hadoop.conf.Configuration;
