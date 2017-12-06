@@ -5,7 +5,7 @@ import com.wyu.commom.KpiType;
 import com.wyu.transformer.model.dim.base.BaseDimension;
 import com.wyu.transformer.model.value.BaseStatsValueWritable;
 import com.wyu.transformer.service.rpc.IDimensionConverter;
-import com.wyu.transformer.service.impl.DimensionConverterImpl;
+import com.wyu.transformer.service.rpc.client.DimensionConverterClient;
 import com.wyu.util.JdbcManager;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.mapreduce.*;
@@ -33,7 +33,7 @@ public class TransformerOutputFormat extends OutputFormat<BaseDimension, BaseSta
     public RecordWriter<BaseDimension, BaseStatsValueWritable> getRecordWriter(TaskAttemptContext context) throws IOException, InterruptedException {
         Configuration conf = context.getConfiguration();
         Connection conn = null;
-        IDimensionConverter converter = new DimensionConverterImpl();
+        IDimensionConverter converter = DimensionConverterClient.createDimensionConverter(conf);
         try {
             conn = JdbcManager.getConnection(conf, GlobalConstants.WAREHOUSE_OF_REPORT);
             conn.setAutoCommit(false);
@@ -144,6 +144,8 @@ public class TransformerOutputFormat extends OutputFormat<BaseDimension, BaseSta
                     }
                 }
             }
+            // 关闭rpc连接
+            DimensionConverterClient.stopDimensionConverterProxy(this.converter);
         }
     }
 }

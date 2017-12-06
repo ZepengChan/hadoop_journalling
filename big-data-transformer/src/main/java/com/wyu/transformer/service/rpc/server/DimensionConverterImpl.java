@@ -247,7 +247,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
 
 	@Override
 	public long getProtocolVersion(String protocol, long clientVersion) throws IOException {
-		return IDimensionConverter.versionId;
+		return IDimensionConverter.versionID;
 	}
 
 	@Override

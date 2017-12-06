@@ -11,7 +11,7 @@ import java.io.IOException;
  * @author ken
  */
 public interface IDimensionConverter extends VersionedProtocol{
-    long versionId = 1;
+    long versionID = 1;
 
     /**
      * 根据dimension的value获取id

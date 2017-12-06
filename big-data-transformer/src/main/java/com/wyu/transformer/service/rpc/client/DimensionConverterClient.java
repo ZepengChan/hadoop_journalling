@@ -105,7 +105,7 @@ public class DimensionConverterClient {
         };
 
         public InnerDimensionConverterProxy(Configuration conf, String address, int port) throws IOException {
-            this.proxy = RPC.getProxy(IDimensionConverter.class, IDimensionConverter.versionId, new InetSocketAddress(address, port), conf);
+            this.proxy = RPC.getProxy(IDimensionConverter.class, IDimensionConverter.versionID, new InetSocketAddress(address, port), conf);
         }
 
         @Override
