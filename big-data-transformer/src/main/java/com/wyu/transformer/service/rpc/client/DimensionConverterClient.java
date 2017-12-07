@@ -77,13 +77,6 @@ public class DimensionConverterClient {
                     // nothing
                 }
             }
-            if (fs != null) {
-                try {
-                    fs.close();
-                } catch (Exception e) {
-                    // nothing
-                }
-            }
         }
     }
 

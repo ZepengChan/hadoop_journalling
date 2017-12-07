@@ -52,6 +52,14 @@
 		</dependency>
 		<!--hbase end -->
 
+		<!-- hive start -->
+		<dependency>
+			<groupId>org.apache.hive</groupId>
+			<artifactId>hive-exec</artifactId>
+			<version>0.13.1</version>
+		</dependency>
+		<!-- hive end -->
+
 	</dependencies>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
