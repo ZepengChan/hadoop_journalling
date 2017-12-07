@@ -62,6 +62,8 @@ public class DimensionConverterImpl implements IDimensionConverter {
 				sql = this.buildKpiSql();
 			} else if (dimension instanceof LocationDimension) {
 				sql = this.buildLocationSql();
+			} else if (dimension instanceof EventDimension) {
+				sql = this.buildEventSql();
 			}else {
 				throw new IOException("不支持此dimensionId的获取：" + dimension.getClass());
 			}
@@ -115,6 +117,10 @@ public class DimensionConverterImpl implements IDimensionConverter {
 			sb.append("location_dimension");
 			LocationDimension location = (LocationDimension) dimension;
 			sb.append(location.getCountry()).append(location.getProvince()).append(location.getCity());
+		}else if (dimension instanceof EventDimension) {
+			sb.append("event_dimension");
+			EventDimension event = (EventDimension) dimension;
+			sb.append(event.getCategory()).append(event.getAction());
 		}
 
 		if (sb.length() == 0) {
@@ -151,7 +157,11 @@ public class DimensionConverterImpl implements IDimensionConverter {
             psmt.setString(++i, location.getCountry());
             psmt.setString(++i, location.getProvince());
             psmt.setString(++i, location.getCity());
-        }
+        }else if (dimension instanceof EventDimension) {
+			EventDimension event = (EventDimension) dimension;
+			psmt.setString(++i, event.getCategory());
+			psmt.setString(++i, event.getAction());
+		}
 	}
 
 	/**
@@ -206,6 +216,17 @@ public class DimensionConverterImpl implements IDimensionConverter {
 	private String[] buildLocationSql() {
 		String querySql = "SELECT `id` FROM `dimension_location` WHERE `country` = ? AND `province` = ? AND `city` = ?";
 		String insertSql = "INSERT INTO `dimension_location`(`country`,`province`,`city`) VALUES(?,?,?)";
+		return new String[] { querySql, insertSql };
+	}
+
+	/**
+	 * 创建event dimension相关sql
+	 *
+	 * @return
+	 */
+	private String[] buildEventSql() {
+		String querySql = "SELECT `id` FROM `dimension_event` WHERE `category` = ? AND `action` = ?";
+		String insertSql = "INSERT INTO `dimension_event`(`category`,`action`) VALUES(?,?)";
 		return new String[] { querySql, insertSql };
 	}
 
