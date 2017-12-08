@@ -194,7 +194,7 @@ var SERVER_URL = "http://192.168.56.147/BfImg.gif";
 						return ;
 					}
 
-					if (typeof(currencyAmount) == "number") {
+					if (typeof(currencyAmount) === "number") {
 						// 金额必须是数字
 						var time = new Date().getTime();
 						var chargeRequestEvent = {};

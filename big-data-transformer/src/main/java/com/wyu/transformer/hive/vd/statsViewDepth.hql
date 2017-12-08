@@ -12,10 +12,10 @@ CREATE TABLE `stats_view_depth` (`platform_dimension_id` bigint ,`data_dimension
 CREATE TABLE `stats_view_depth_tmp`(`pl` string, `date` string, `col` string, `ct` bigint);
 
 -- 4. 编写UDF(platformdimension & datedimension)<需要注意，要删除DimensionConvertClient类中所有FileSystem关闭的操作>
--- 5. 上传transformer-0.0.1.jar到hdfs的/wyu/transformer文件夹中
+-- 5. 上传big-data-transformer-0.0.1-SNAPSHOT.jar到hdfs的/wyu/transformer文件夹中
 -- 6. 创建hive的function
-create function platform_convert as 'com.wyu.transformer.hive.PlatformDimensionUDF' using jar 'hdfs://hh:8020/wyu/transformer/transformer-0.0.1.jar';
-create function date_convert as 'com.wyu.transformer.hive.DateDimensionUDF' using jar 'hdfs://hh:8020/wyu/transformer/transformer-0.0.1.jar';
+create function platform_convert as 'com.wyu.transformer.hive.PlatformDimensionUDF' using jar 'hdfs://hh:8020/wyu/transformer/big-data-transformer-0.0.1-SNAPSHOT.jar';
+create function date_convert as 'com.wyu.transformer.hive.DateDimensionUDF' using jar 'hdfs://hh:8020/wyu/transformer/big-data-transformer-0.0.1-SNAPSHOT.jar';
 
 
 -- 7. hql编写(统计用户角度的浏览深度)<注意：时间为外部给定>

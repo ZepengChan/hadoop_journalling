@@ -9,7 +9,7 @@ tblproperties('hbase.table.name'='event_logs');
 CREATE TABLE `stats_event` (`platform_dimension_id` bigint ,`data_dimension_id` bigint , `event_dimension_id` bigint , `times` bigint , `created` string);
 
 -- 3. 编写UDF(eventdimension)<需要注意，要删除DimensionConvertClient类中所有FileSystem关闭的操作>
--- 4. 上传transformer-0.0.1.jar到hdfs的/beifeng/transformer文件夹中
+-- 4. 上传transformer-0.0.1.jar到hdfs的/wyu/transformer文件夹中
 -- 5. 创建hive的function
 create function event_convert as 'com.wyu.transformer.hive.EventDimensionUDF' using jar 'hdfs://hh:8020/wyu/transformer/big-data-transformer-0.0.1.jar';
 
@@ -18,7 +18,7 @@ with tmp as
 (
 select pl,from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM-dd') as date,ca,ac
 from event_logs
-where en='e_e' and pl is not null and s_time >= unix_timestamp('2015-12-13','yyyy-MM-dd')*1000 and s_time < unix_timestamp('2015-12-14','yyyy-MM-dd')*1000 
+where en='e_e' and pl is not null and s_time >= unix_timestamp('2015-12-12','yyyy-MM-dd')*1000 and s_time < unix_timestamp('2015-12-15','yyyy-MM-dd')*1000
 )
 from (
 select pl as pl,date,ca as ca,ac as ac,count(1) as times from tmp group by pl,date,ca,ac union all

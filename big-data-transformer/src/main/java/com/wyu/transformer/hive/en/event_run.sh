@@ -31,5 +31,5 @@ hive  -e "with tmp as (select pl,from_unixtime(cast(s_time/1000 as bigint),'yyyy
 
 ## sqoop
 echo "run the sqoop script,insert hive data to mysql table"
-sqoop export --connect jdbc:mysql://192.168.1.106:3306/report --username hive --password hive --table stats_event --export-dir /hive/stats_event/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,data_dimension_id,event_dimension_id
+sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_event --export-dir /hive/stats_event/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,data_dimension_id,event_dimension_id
 echo "complete run the event job"

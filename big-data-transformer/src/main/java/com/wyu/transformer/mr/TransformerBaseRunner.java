@@ -215,6 +215,7 @@ public abstract class TransformerBaseRunner implements Tool {
      * @throws IOException
      */
     protected void beforeRunJob(Job job) throws IOException {
+
         // nothing
     }
 
