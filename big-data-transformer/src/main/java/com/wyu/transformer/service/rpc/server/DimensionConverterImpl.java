@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;import java.util.Map;
 public class DimensionConverterImpl implements IDimensionConverter {
     private static final Logger logger = Logger.getLogger(DimensionConverterImpl.class);
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://192.168.1.102:3306/report?useUnicode=true&amp;characterEncoding=utf8";
+    private static final String URL = "jdbc:mysql://192.168.1.102:3306/report?useUnicode=true&characterEncoding=utf8";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
     private Map<String, Integer> cache = new LinkedHashMap<String, Integer>() {
@@ -48,7 +48,7 @@ public class DimensionConverterImpl implements IDimensionConverter {
         try {
             // 1. 查看数据库中是否有对应的值，有则返回
             // 2. 如果第一步中，没有值；先插入我们dimension数据， 获取id
-            String[] sql = null; // 具体执行sql数组
+            String[] sql; // 具体执行sql数组
             if (dimension instanceof DateDimension) {
                 sql = this.buildDateSql();
             } else if (dimension instanceof PlatformDimension) {
@@ -70,10 +70,12 @@ public class DimensionConverterImpl implements IDimensionConverter {
             } 
 
             conn = this.getConnection(); // 获取连接
-            int id = 0;
+            int id;
             synchronized (this) {
                 id = this.executeSql(conn, cacheKey, sql, dimension);
             }
+            //添加缓存
+            this.cache.put(cacheKey,id);
             return id;
         } catch (Throwable e) {
             logger.error("操作数据库出现异常", e);

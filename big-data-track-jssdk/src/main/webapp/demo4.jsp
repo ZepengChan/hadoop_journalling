@@ -8,7 +8,7 @@
 (function(){
 	var _aelog_ = _aelog_ || window._aelog_ || [];
 	// 设置_aelog_相关属性
-	_aelog_.push(["memberId","ken"]);
+	_aelog_.push(["memberId","yuhe3929"]);
 	window._aelog_ = _aelog_;
 	(function(){
 	    var aejs = document.createElement('script');

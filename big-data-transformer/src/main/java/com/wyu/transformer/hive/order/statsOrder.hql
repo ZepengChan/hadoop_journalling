@@ -31,7 +31,7 @@ where en='e_crt' and pl is not null and s_time >= unix_timestamp('2015-12-13','y
 ) as tmp
 insert overwrite table order_info select oid,pl,s_time,cut,pt,cua 
 	sqoop脚本
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table order_info --export-dir /hive/order_info/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key order_id
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table order_info --export-dir /hive/order_info/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key order_id
 
 
 -- 7. 订单数量hql(总的)
@@ -43,16 +43,16 @@ group by pl,from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM-dd'),cut,pt) as t
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,orders
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),orders,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as orders,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as orders,dt group by dt,cut,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt,cut;
 
 -- 8. 订单数量sqoop(总的)
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,orders,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,orders,created
 
 
 -- 9. 订单金额hql(总的)
@@ -66,16 +66,16 @@ select pl,date,cut,pt,sum(amount) as amount group by pl,date,cut,pt
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,amount
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),amount,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as amount,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as amount,dt group by dt,cut,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt,cut;
 
 -- 10.订单金额sqoop(总的)
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,order_amount,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,order_amount,created
 
 
 -- 11. 成功支付订单数量hql
@@ -88,16 +88,16 @@ group by order_info(oid,'pl'),from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,orders
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),orders,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as orders,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as orders,dt group by dt,cut,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt,cut;
 
 -- 12. 成功支付订单数量sqoop
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,success_orders,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,success_orders,created
 
 -- 13. 成功支付订单金额hql
 from (from (select order_info(oid,'pl') as pl,from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM-dd') as date,order_info(oid,'cut') as cut,order_info(oid,'pt') as pt,oid,max(order_info(oid)) as amount
@@ -108,16 +108,16 @@ select pl,date,cut,pt,sum(amount) as amount group by pl,date,cut,pt) as tmp2
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,amount
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),amount,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as amount,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as amount,dt group by dt,cut,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt,cut;
 
 -- 14. 成功支付订单金额sqoop
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,revenue_amount,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,revenue_amount,created
 
 -- 15. 成功支付订单迄今为止总金额hql
 from (from (select order_info(oid,'pl') as pl,from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM-dd') as date,order_info(oid,'cut') as cut,order_info(oid,'pt') as pt,oid,max(order_info(oid)) as amount
@@ -128,16 +128,16 @@ select pl,date,cut,pt,sum(amount) as amount group by pl,date,cut,pt) as tmp2
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,amount
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),order_total_amount(platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),cast(amount as int),'revenue') as amount,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),cast(sum(values) as int),"revenue") as amount,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),"revenue") as amount,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),"revenue") as amount,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),cast(sum(values) as int),"revenue") as amount,dt group by dt,cut,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),"revenue") as amount,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),"revenue") as amount,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),"revenue") as amount,dt group by pl,dt,cut;
 
 -- 16. 成功支付订单迄今为止总金额sqoop
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,total_revenue_amount,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,total_revenue_amount,created
 
 
 -- 17. 退款订单数量hql
@@ -150,16 +150,16 @@ group by order_info(oid,'pl'),from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,orders
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),orders,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as orders,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as orders,dt group by dt,cut,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as orders,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as orders,dt group by pl,dt,cut;
 
 -- 18. 退款订单数量sqoop
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,refund_orders,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,refund_orders,created
 
 -- 19. 退款订单金额hql
 from (from (select order_info(oid,'pl') as pl,from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM-dd') as date,order_info(oid,'cut') as cut,order_info(oid,'pt') as pt,oid,max(order_info(oid)) as amount
@@ -170,16 +170,16 @@ select pl,date,cut,pt,sum(amount) as amount group by pl,date,cut,pt) as tmp2
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,amount
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),amount,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as amount,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),sum(values) as amount,dt group by dt,cut,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),sum(values) as amount,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),sum(values) as amount,dt group by pl,dt,cut;
 
 -- 20. 退款订单金额sqoop
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,refund_amount,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,refund_amount,created
 
 -- 21. 退款订单迄今为止总金额hql
 from (from (select order_info(oid,'pl') as pl,from_unixtime(cast(s_time/1000 as bigint),'yyyy-MM-dd') as date,order_info(oid,'cut') as cut,order_info(oid,'pt') as pt,oid,max(order_info(oid)) as amount
@@ -190,16 +190,15 @@ select pl,date,cut,pt,sum(amount) as amount group by pl,date,cut,pt) as tmp2
 insert overwrite table stats_order_tmp1 select pl,date,cut,pt,amount
 insert overwrite table stats_order_tmp2 select platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),order_total_amount(platform_convert(pl),date_convert(date),currency_type_convert(cut),payment_type_convert(pt),cast(amount as int),'refund') as amount,date
 
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),cast(sum(values) as int),'refund') as amount,dt group by dt,cut,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),'refund') as amount,dt group by dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by dt,cut
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),'refund') as amount,dt group by pl,dt,pt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by pl,dt
-from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by pl,dt,cut
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert(pt),cast(sum(values) as int),'refund') as amount,dt group by dt,cut,ptfrom stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),'refund') as amount,dt group by dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by dt,cut;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert('all'),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert(pt),cast(sum(values) as int),'refund') as amount,dt group by pl,dt,pt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert('all'),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by pl,dt;
+from stats_order_tmp1 insert into table stats_order_tmp2 select platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),order_total_amount(platform_convert(pl),date_convert(dt),currency_type_convert(cut),payment_type_convert('all'),cast(sum(values) as int),'refund') as amount,dt group by pl,dt,cut;
 
 -- 22. 退款订单迄今为止总金额sqoop
-sqoop export --connect jdbc:mysql://192.168.1.101:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,total_refund_amount,created
+sqoop export --connect jdbc:mysql://192.168.1.102:3306/report --username root --password 123456 --table stats_order --export-dir /hive/stats_order_tmp2/* --input-fields-terminated-by "\\01" --update-mode allowinsert --update-key platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id --columns platform_dimension_id,date_dimension_id,currency_type_dimension_id,payment_type_dimension_id,total_refund_amount,created
 
 
 

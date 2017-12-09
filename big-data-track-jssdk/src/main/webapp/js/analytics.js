@@ -1,5 +1,5 @@
 
-var SERVER_URL = "http://192.168.56.147/BfImg.gif";
+var SERVER_URL = "http://192.168.56.144/BfImg.gif";
 (function(){
 	var CookieUtil = {
 			// get the cookie of the key is name

@@ -7,5 +7,6 @@
 </head>
 <body>
 	启动成功
+<a href="demo.jsp">demo</a>
 </body>
 </html>

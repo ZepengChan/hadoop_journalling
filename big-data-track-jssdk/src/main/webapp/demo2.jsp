@@ -9,12 +9,12 @@
 <body>
 	测试页面2
 	<br/>
-	<label>orderid: 123456</label><br>
+	<label>orderid: orderid123</label><br>
 	<label>orderName: 测试订单123456</label><br/>
 	<label>currencyAmount: 524.01</label><br/>
 	<label>currencyType: RMB</label><br/>
 	<label>paymentType: alipay</label><br/>
-	<button onclick="__AE__.onChargeRequest('123456','测试订单123456',524.01,'RMB','alipay')">触发chargeRequest事件</button><br/>
+	<button onclick="__AE__.onChargeRequest('orderid123','ken123',524.01,'RMB','alipay')">触发chargeRequest事件</button><br/>
 	跳转到:
 	<a href="demo.jsp">demo</a>
 	<a href="demo2.jsp">demo2</a>
