@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;import java.util.Map;
 public class DimensionConverterImpl implements IDimensionConverter {
     private static final Logger logger = Logger.getLogger(DimensionConverterImpl.class);
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://192.168.1.101:3306/report?useUnicode=true&amp;characterEncoding=utf8";
+    private static final String URL = "jdbc:mysql://192.168.1.102:3306/report?useUnicode=true&amp;characterEncoding=utf8";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
     private Map<String, Integer> cache = new LinkedHashMap<String, Integer>() {
