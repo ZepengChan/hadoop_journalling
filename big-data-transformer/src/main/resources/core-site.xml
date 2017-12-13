@@ -3,11 +3,11 @@
 
 
 <configuration>
-		 <property>
-			<name>fs.default.name</name>
-			<value>hdfs://hh/</value>
-			<description>HDFS的URI，文件系统://namenode标识:端口号</description>
-		</property>
+    <property>
+        <name>fs.default.name</name>
+        <value>hdfs://hh/</value>
+        <description>HDFS的URI，文件系统://namenode标识:端口号</description>
+    </property>
 
 
 </configuration>

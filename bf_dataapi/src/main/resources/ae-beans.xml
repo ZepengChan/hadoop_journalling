@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byName">
+    <!-- 创建jdbc -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <import resource="classpath*:aeConfigContext.xml"/> <!-- ae相关配置信息 -->
+
+    <bean id="aeDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClassName}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="minPoolSize" value="${jdbc.minPoolSize}"/>
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
+        <property name="acquireIncrement" value="${jdbc.acquireIncrement}"/>
+        <property name="initialPoolSize" value="${jdbc.initialPoolSize}"/>
+        <property name="testConnectionOnCheckout" value="${jdbc.testConnectionOnCheckout}"/>
+        <property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}"/>
+        <property name="maxIdleTime" value="${jdbc.maxIdleTime}"/>
+    </bean>
+
+    <bean id="aeSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="aeDataSource"/>
+        <property name="mapperLocations" value="classpath*:com/beifeng/ae/**/*Mapper.xml"/>
+    </bean>
+
+    <bean id="aeSqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="aeSqlSessionFactory"/>
+    </bean>
+
+    <!-- 具体service bean -->
+    <!-- <bean id="userBehaviorSpeedRateService" class="com.beifeng.ae.service.impl.UserBehaviorSpeedRateServiceImpl"></bean> -->
+    <!-- 具体service bean结束 -->
+
+    <!-- bucket.metric 对应的计算类bean -->
+    <!-- <bean id="user_behavior.active_user_rate" class="com.beifeng.ae.calculate.impl.ActiveRateCalculater"/> -->
+    <!-- bucket.metric 对应的计算类bean结束 -->
+
+    <!-- dao相关bean -->
+    <bean id="baseDao" abstract="true">
+        <property name="sqlSessionTemplate" ref="aeSqlSessionTemplate"/>
+    </bean>
+    <bean id="aeDao" class="com.beifeng.ae.dao.mybatis.AEDao" parent="baseDao"/>
+    <bean id="dimensionDao" class="com.beifeng.ae.dao.impl.DimensionDaoImpl" parent="baseDao"/>
+    <bean id="dateDimensionDao" class="com.beifeng.ae.dao.impl.DateDimensionDaoImpl" parent="baseDao"/>
+    <bean id="platformDimeDao" class="com.beifeng.ae.dao.impl.PlatformDimensionDaoImpl" parent="baseDao"/>
+    <bean id="kpiDimeDao" class="com.beifeng.ae.dao.impl.KpiDimensionDaoImpl" parent="baseDao"/>
+    <!-- dao相关bean结束 -->
+
+    <!-- 共用service bean -->
+    <bean id="aeService" class="com.beifeng.ae.service.impl.AEServiceImpl">
+        <property name="aeDao" ref="aeDao"/>
+    </bean>
+    <bean id="dimensionService" class="com.beifeng.ae.service.impl.DimensionServiceImpl">
+        <property name="dimeDao" ref="dimensionDao"/>
+        <property name="dateDimeDao" ref="dateDimensionDao"/>
+        <property name="platformDimeDao" ref="platformDimeDao"/>
+        <property name="kpiDimeDao" ref="kpiDimeDao"/>
+    </bean>
+    <bean class="com.beifeng.ae.util.ApplicationContextUtil"/>
+    <!-- 共用service bean结束 -->
+</beans>

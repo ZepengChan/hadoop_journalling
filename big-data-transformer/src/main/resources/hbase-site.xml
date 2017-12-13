@@ -3,23 +3,23 @@
 
 <configuration>
 
-	<property>
-		<name>fs.defaultFS</name>
-		<value>hdfs://hh:8020</value>
-	</property>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://hh:8020</value>
+    </property>
 
-	<property>
-		<name>hbase.cluster.distributed</name>
-		<value>true</value>
-	</property>
-	<property>
-		<name>hbase.zookeeper.quorum</name>
-		<value>hh</value>
-	</property>
-	<!-- local submit job need those config -->
-	<!-- <property> <name>mapreduce.framework.name</name> <value>yarn</value> 
-		</property> <property> <name>yarn.resourcemanager.address</name> <value>hh:8032</value> 
-		</property> <property> <name>mapreduce.app-submission.cross-platform</name> 
-		<value>true</value> </property> -->
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hbase.zookeeper.quorum</name>
+        <value>hh</value>
+    </property>
+    <!-- local submit job need those config -->
+    <!-- <property> <name>mapreduce.framework.name</name> <value>yarn</value>
+        </property> <property> <name>yarn.resourcemanager.address</name> <value>hh:8032</value>
+        </property> <property> <name>mapreduce.app-submission.cross-platform</name>
+        <value>true</value> </property> -->
 
 </configuration>
