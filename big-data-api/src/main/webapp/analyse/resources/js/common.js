@@ -86,10 +86,12 @@ function showNoConnent(id, msg) {
         str = msg;
     }
     $("#" + id).html('<div class="ibox no-margins"><div class="ibox-title">提示信息:</div><div class="ibox-content"><span class="font-bold">' + str + '</span></div></div>');
-}
+};
+
 function cleanContent(id) {
     $("#" + id).html("");
-}
+};
+
 function uniqueArray(arr) {
     arr.sort();
     var re = [arr[0]];
@@ -99,4 +101,4 @@ function uniqueArray(arr) {
         }
     }
     return re;
-}
+};

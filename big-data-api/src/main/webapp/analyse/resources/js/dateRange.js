@@ -87,7 +87,7 @@
 	//默认日历参数最大是3
 	this.mOpts.calendars = Math.min(this.mOpts.calendars, 3);
 	//根据不同主题需要初始化的变量
-	this.mOpts.compareCss = this.mOpts.theme == 'ta' ? this.mOpts.selectCss :this.mOpts.compareCss;
+	this.mOpts.compareCss = this.mOpts.theme == 'ta' ? this.mOpts.selectCss :this.mOpts.compareCss
     //昨天,今天,最近7天,最近14天,最近30天	
 	this.periodObj = {};
 	this.periodObj[__method.mOpts.aToday] = 0;
@@ -384,7 +384,7 @@
 					ecDate = eDate;
 				}
 				if(ecDate.getTime() >= __method.mOpts.minValidDate * 1000 && scDate.getTime() < __method.mOpts.minValidDate * 1000){
-					scDate.setTime(__method.mOpts.minValidDate * 1000);
+					scDate.setTime(__method.mOpts.minValidDate * 1000)
 					scDate = __method.str2date(__method.date2ymd(scDate).join('-'));
 					ecDate.setDate(scDate.getDate() + ((eTime - sTime) / 86400000) - 1);
 				}
@@ -449,7 +449,8 @@
     $(document).bind('click', function () {
        __method.close();
     });
-    }
+};
+
 /**
  * @description 日期选择器的初始化方法，对象原型扩展
  * @param {Boolean} isCompare 标识当前初始化选择面板是否是对比日期
@@ -717,7 +718,7 @@ pickerDateRange.prototype.bindChangeForSelect = function(){
 		}catch(e){
 			window.console && console.log(e);
 		}
-};
+}
 /**
  * @description 计算今天，昨天，最近7天，最近30天返回的时间范围
  * @param {Num} period 快捷选择的时间段，今天、昨天、最近7天、最近30天
@@ -735,7 +736,7 @@ pickerDateRange.prototype.getSpecialPeriod = function(period){
 		todayStr = otherdayStr;
 	}
 	return {today: todayStr , otherday : otherdayStr};
-};
+}
 
 pickerDateRange.prototype.getCurrentDate = function(){
     return {
@@ -868,7 +869,7 @@ pickerDateRange.prototype.checkDateRange = function(startYmd, endYmd) {
         }
     }
     return true;
-};
+}
 
 /**
  *  @description 选择日期
@@ -1168,8 +1169,8 @@ pickerDateRange.prototype.fillDate = function(year, month, index) {
 		
 		//如果是magicSelect，用户自定义的选择年和月份
 		if(this.mOpts.magicSelect){
-			var yh = ['<div class="select_wrap" id="yselected_'+index+'"><div class="select" id="_ybtn_'+index+'">'+year+'</div><div class="dropdown" id="_yctn_'+index+'"><ul class="list_menu">'];
-			var mh = ['<div class="select_wrap" id="mselected_'+index+'"><div class="select" id="_mbtn_'+index+'">'+(month+1)+'</div><div class="dropdown" id="_mctn_'+index+'"><ul class="list_menu">'];
+			var yh = ['<div class="select_wrap" id="yselected_'+index+'"><div class="select" id="_ybtn_'+index+'">'+year+'</div><div class="dropdown" id="_yctn_'+index+'"><ul class="list_menu">']
+			var mh = ['<div class="select_wrap" id="mselected_'+index+'"><div class="select" id="_mbtn_'+index+'">'+(month+1)+'</div><div class="dropdown" id="_mctn_'+index+'"><ul class="list_menu">']
 		
 			//var yh = ['<select name="yselected_'+index+'" class="xxxs">'];
 			//var mh = ['<select name="mselected_'+index+'" class="xxxs">'];
@@ -1483,7 +1484,7 @@ var CookieUtil = {
         if (domain) {
             cookieText += "; domain=" + domain;
         } else {
-            //cookieText += "; domain=.lvmama.com";
+            //cookieText += "; domain=.beifeng.com";
         }
 
         if (secure) {
@@ -1498,7 +1499,7 @@ var CookieUtil = {
     },
 };
 
-//  lvmama analyse engine date object
+//  beifeng analyse engine date object
 function AE_Date(showDateId, triggerId, callback, startDate, endDate, isDate) {
 	var startDateStr = '';
 	var endDateStr = '';
@@ -1527,7 +1528,8 @@ function AE_Date(showDateId, triggerId, callback, startDate, endDate, isDate) {
 			callback(obj.startDate, obj.endDate);
 		}
 	});
-}
+};
+
 function getYesterDay() {
 	var today=new Date();
 	var yesterday_milliseconds=today.getTime()-1000*60*60*24;
@@ -1536,10 +1538,12 @@ function getYesterDay() {
 	return yesterday;
 	// 直接使用最后一天
 	//return ymdStr2Date(getEndDate());
-}
+};
+
 function ymdStr2Date(str) {
     return new Date(str.replace(/-/g, "/"));
-}
+};
+
 function date2YmdStr(date){
 	var y = date.getFullYear();
 	var m = (date.getMonth() + 1);
@@ -1551,16 +1555,20 @@ function date2YmdStr(date){
         d = '0' + d;
 	}
     return y + '-' + m + '-' + d;
-}
+};
+
+
 function getSpecialDate(d, amount) {
     var mesc = d.getTime() + amount * 60 *60 *24 * 1000;
     var dd = new Date();
     dd.setTime(mesc);
     return dd;
-}
+};
+
 function setStartDate(sd) {
     CookieUtil.set("startDate", sd);
-}
+};
+
 function getStartDate() {
     var sd = CookieUtil.get("startDate");
     if (sd) {
@@ -1570,10 +1578,12 @@ function getStartDate() {
         setStartDate(sd);
     }
     return sd;
-}
+};
+
 function setEndDate(ed) {
     CookieUtil.set("endDate", ed);
-}
+};
+
 function getEndDate() {
     var ed = CookieUtil.get("endDate");
     if (ed) {
@@ -1583,7 +1593,8 @@ function getEndDate() {
         setEndDate(ed);
     }
     return ed;
-}
+};
+
 function formatSecs(secs) {
 	if (secs && !isNaN(secs)) {
 		var hour = Math.floor(secs / 3600);
@@ -1602,5 +1613,5 @@ function formatSecs(secs) {
 		return result;
 	}
 	return secs;
-}
+};
 

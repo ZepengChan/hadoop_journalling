@@ -177,7 +177,7 @@
 				cursor:pointer;
 			}
 			.calendar-month td.hover,.calendar-month td:hover,.calendar-month caption span:hover{
-				background:#;
+				background:#6590c1;
 				color:#6590c1;
 				border:1px solid #6590c1;
 				padding: 3px 10px;
