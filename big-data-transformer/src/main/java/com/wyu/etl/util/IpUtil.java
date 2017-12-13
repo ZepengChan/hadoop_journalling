@@ -17,6 +17,7 @@ import java.util.Map;
 /**
  * 对外的 ip地址工具类，调用解析类的方法
  */
+@SuppressWarnings("ALL")
 public class IpUtil {
 
     /**
@@ -74,6 +75,7 @@ public class IpUtil {
      * 构建二查找树，查找时间复杂度 log2n
      * 由于需要打开文件，查找少数的时候，第一次会比较慢
      */
+    @SuppressWarnings("JavaDoc")
     private static class IpHelper {
 
         private static final String IP_FILE = "ipDatabase.csv";
@@ -156,6 +158,7 @@ public class IpUtil {
          * @return Map<ipCode, province> 返回map key为城市代码 value为province+city
          * @throws Exception
          */
+        @SuppressWarnings("JavaDoc")
         private static Map<Integer, String> getRegionRelationMap() throws Exception {
             String file = IpHelper.class.getClassLoader().getResource(regionFile).getFile();
 

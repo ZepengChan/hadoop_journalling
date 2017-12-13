@@ -196,11 +196,11 @@ public abstract class TransformerBaseRunner implements Tool {
 
         job.setJarByClass(this.runnerClass);
         // 本地运行
-        TableMapReduceUtil.initTableMapperJob(initScans(job), this.mapperClass, this.mapOutputKeyClass, this.mapOutputValueClass, job, false);
-        // 集群运行：本地提交和打包(jar)提交
-        // TableMapReduceUtil.initTableMapperJob(initScans(job),
-        // this.mapperClass, this.mapOutputKeyClass, this.mapOutputValueClass,
-        // job);
+//        TableMapReduceUtil.initTableMapperJob(initScans(job), this.mapperClass, this.mapOutputKeyClass, this.mapOutputValueClass, job, false);
+//         集群运行：本地提交和打包(jar)提交
+         TableMapReduceUtil.initTableMapperJob(initScans(job),
+         this.mapperClass, this.mapOutputKeyClass, this.mapOutputValueClass,
+         job);
         job.setReducerClass(this.reducerClass);
         job.setOutputKeyClass(this.outputKeyClass);
         job.setOutputValueClass(this.outputValueClass);
@@ -290,8 +290,8 @@ public abstract class TransformerBaseRunner implements Tool {
         Configuration conf = job.getConfiguration();
         // 获取运行时间: yyyy-MM-dd
         String date = conf.get(GlobalConstants.RUNNING_DATE_PARAMES);
-        long startDate = TimeUtil.parseString2Long(date);
-        long endDate = startDate + GlobalConstants.DAY_OF_MILLISECONDS;
+        long startDate = 1420041600;//TimeUtil.parseString2Long(date);
+        long endDate = 1514649600;//startDate + GlobalConstants.DAY_OF_MILLISECONDS;
 
         Scan scan = new Scan();
         // 定义hbase扫描的开始rowkey和结束rowkey

@@ -49,8 +49,10 @@ public class AnalyserLogDataRunner implements Tool {
         job.setMapOutputKeyClass(NullWritable.class);
         job.setOutputValueClass(Put.class);
 
-        /*设置ruducer*/
-        TableMapReduceUtil.initTableReducerJob(EventLogConstants.HBASE_NAME_EVENT_LOGS, null, job, null, null, null, null, false);
+        /*本地*/
+//        TableMapReduceUtil.initTableReducerJob(EventLogConstants.HBASE_NAME_EVENT_LOGS, null, job, null, null, null, null, false);
+        /*集群*/
+        TableMapReduceUtil.initTableReducerJob(EventLogConstants.HBASE_NAME_EVENT_LOGS, null, job, null, null, null, null);
         job.setNumReduceTasks(0);
 
         /*设置输入路径*/
@@ -79,7 +81,7 @@ public class AnalyserLogDataRunner implements Tool {
         try {
             fs = FileSystem.get(conf);
             String date = conf.get(GlobalConstants.RUNNING_DATE_PARAMES);
-            Path inputPath = new Path("/logs/" + TimeUtil.parseLong2String(TimeUtil.parseString2Long(date), "MM/dd"));
+            Path inputPath = new Path("/logs/12/12" /*+ TimeUtil.parseLong2String(TimeUtil.parseString2Long(date), "MM/dd")*/);
             if (fs.exists(inputPath)) {
                 FileInputFormat.addInputPath(job, inputPath);
             } else {

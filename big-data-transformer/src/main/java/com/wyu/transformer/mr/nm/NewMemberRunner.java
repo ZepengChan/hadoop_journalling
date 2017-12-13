@@ -145,7 +145,7 @@ public class NewMemberRunner extends TransformerBaseRunner {
                 while (rs.next()) {
                     int platformId = rs.getInt("platform_dimension_id");
                     int browserId = rs.getInt("browser_dimension_id");
-                    int totalMembers = rs.getInt("total_members`");
+                    int totalMembers = rs.getInt("total_members");
                     oldValueMap.put(platformId + "_" + browserId, totalMembers);
                 }
             }
