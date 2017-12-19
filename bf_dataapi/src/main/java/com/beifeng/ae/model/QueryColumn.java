@@ -21,7 +21,9 @@ public class QueryColumn implements Cloneable {
     private int dimensionBrowserId;
     private int dimensionDateId;
     private int dimensionInboundId;
-    private int dimensionKeywordId;
+    private int dimensionEventId;
+    private int dimensionCurrencyTypeId;
+    private int dimensionPaymentTypeId;
 
     private String osVersion;
 
@@ -36,9 +38,6 @@ public class QueryColumn implements Cloneable {
 
     // inbound
     private String inboundName;
-
-    // keyword
-    private String keyword;
 
     public String getType() {
         return type;
@@ -164,14 +163,6 @@ public class QueryColumn implements Cloneable {
         return locationCountry;
     }
 
-    public String getKeyword() {
-        return keyword;
-    }
-
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
-    }
-
     public void setLocationCountry(String locationCountry) {
         this.locationCountry = locationCountry;
     }
@@ -208,12 +199,28 @@ public class QueryColumn implements Cloneable {
         this.inboundName = inboundName;
     }
 
-    public int getDimensionKeywordId() {
-        return dimensionKeywordId;
+    public int getDimensionEventId() {
+        return dimensionEventId;
     }
 
-    public void setDimensionKywordId(int dimensionKeywordId) {
-        this.dimensionKeywordId = dimensionKeywordId;
+    public void setDimensionEventId(int dimensionEventId) {
+        this.dimensionEventId = dimensionEventId;
+    }
+
+    public int getDimensionCurrencyTypeId() {
+        return dimensionCurrencyTypeId;
+    }
+
+    public void setDimensionCurrencyTypeId(int dimensionCurrencyTypeId) {
+        this.dimensionCurrencyTypeId = dimensionCurrencyTypeId;
+    }
+
+    public int getDimensionPaymentTypeId() {
+        return dimensionPaymentTypeId;
+    }
+
+    public void setDimensionPaymentTypeId(int dimensionPaymentTypeId) {
+        this.dimensionPaymentTypeId = dimensionPaymentTypeId;
     }
 
     @Override

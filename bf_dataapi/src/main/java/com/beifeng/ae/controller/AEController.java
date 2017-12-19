@@ -147,6 +147,43 @@ public class AEController extends AEBaseController {
             return Message.badRequest("Dimension platform id or platform is invalid arguments");
         }
 
+        switch (bucket) {
+        case AEConstants.BUCKET_BROWSER:
+            paramStatus = this.setDimensionBrowserId(request, groups, queryColumn);
+            if (!paramStatus) {
+                return Message.noContent("Dimension browser id or browser is invalid argument.");
+            }
+            break;
+        case AEConstants.BUCKET_LOCATION:
+            paramStatus = this.setDimensionLocationId(request, groups, queryColumn);
+            if (!paramStatus) {
+                return Message.noContent("Dimension location id or location(country, province, city) is invalid argument.");
+            }
+            break;
+        case AEConstants.BUCKET_INBOUND:
+            paramStatus = this.setDimensionInboundId(request, groups, queryColumn);
+            if (!paramStatus) {
+                return Message.noContent("Dimension inbound id or inbound is invalid argument.");
+            }
+            break;
+        case AEConstants.BUCKET_EVENT:
+            paramStatus = this.setDimensionEventId(request, groups, queryColumn);
+            if (!paramStatus) {
+                return Message.noContent("Dimension event id or category&action is invalid argument.");
+            }
+            break;
+        case AEConstants.BUCKET_ORDER:
+            paramStatus = this.setDimensionCurrencyTypeId(request, groups, queryColumn);
+            if (!paramStatus) {
+                return Message.noContent("Dimension currency type id or currency_type is invalid argument.");
+            }
+            paramStatus = this.setDimensionPaymentTypeId(request, groups, queryColumn);
+            if (!paramStatus) {
+                return Message.noContent("Dimension payment type id or payment_type is invalid argument.");
+            }
+            break;
+        }
+
         // 开始创建每个metric对应的QueryModel
         Map<String, QueryModel> queryModels = new HashMap<String, QueryModel>();
         for (String metricItem : metrics) {
@@ -169,7 +206,7 @@ public class AEController extends AEBaseController {
             model.addMetric(metricItem);
             // 返回值
             String columns = this.bucketMetricColumns.get(key);
-            model.addFields(metric, columns);
+            model.addFields(metricItem, columns);
             model.setQueryColumn(queryColumn);
             model.setGroups(groups);
         }

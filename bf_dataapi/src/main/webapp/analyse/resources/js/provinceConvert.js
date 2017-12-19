@@ -1,22 +1,22 @@
-String.prototype.startWith = function (str) {
-    if (str == null || str == "" || this.length == 0 || str.length > this.length)
-        return false;
-    if (this.substr(0, str.length) == str)
-        return true;
+String.prototype.startWith=function(str){
+    if(str==null||str==""||this.length==0||str.length>this.length)
+      return false;
+    if(this.substr(0,str.length)==str)
+      return true;
     else
-        return false;
+      return false;
     return true;
 };
 
 var provinceMap = {
-    "上海": ["上海市", "cn-sh"],
-    "云南": ["云南省", "cn-yn"],
-    "内蒙古": ["内蒙古自治区", "cn-nm"],
+    "上海":["上海市", "cn-sh"],
+    "云南": ["云南省", "cn-yn"], 
+    "内蒙古": ["内蒙古自治区", "cn-nm"], 
     // "台湾": ["台湾省", "tw-tw"], 
-    "吉林": ["吉林省", "cn-jl"],
-    "四川": ["四川省", "cn-sc"],
-    "天津": ["天津市", "cn-tj"],
-    "宁夏": ["宁夏回族自治区", "cn-nx"],
+    "吉林": ["吉林省", "cn-jl"], 
+    "四川": ["四川省", "cn-sc"], 
+    "天津": ["天津市", "cn-tj"], 
+    "宁夏": ["宁夏回族自治区", "cn-nx"], 
     "安徽": ["安徽省", "cn-ah"],
     "山东": ["山东省", "cn-sd"],
     "山西": ["山西省", "cn-sx"],
@@ -45,7 +45,7 @@ var provinceMap = {
     "北京": ["北京市", "cn-bj"]
 };
 
-var convertProvince = function (province) {
+var convertProvince = function(province) {
     for (var p in provinceMap) {
         if (province.startWith(p)) {
             return provinceMap[p];

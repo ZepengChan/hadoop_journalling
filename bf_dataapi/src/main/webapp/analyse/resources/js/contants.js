@@ -1,1 +1,1 @@
-var COMMON_PREFIX_URL = "/vst_recommend";
+var COMMON_PREFIX_URL = "/bf_dataapi";

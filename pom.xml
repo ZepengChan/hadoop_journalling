@@ -11,6 +11,7 @@
         <module>big-data-track-jssdk</module>
         <module>bf_dataapi</module>
         <module>big-data-transformer</module>
+        
     </modules>
 
     <dependencies>

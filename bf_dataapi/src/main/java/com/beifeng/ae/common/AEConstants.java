@@ -21,10 +21,22 @@ public class AEConstants {
 
     public static final String DIMENSION_PLATFORM_ID = "dimension_platform_id";
     public static final String PLATFORM = "platform";
-    
-
-    
-    
+    public static final String DIMENSION_BROWSER_ID = "dimension_browser_id";
+    public static final String BROWSER = "browser";
+    public final static String BROWSER_VERSION = "browser_version";
+    public final static String DIMENSION_LOCATION_ID = "dimension_location_id";
+    public final static String LOCATION_COUNTRY = "country";
+    public final static String LOCATION_PROVINCE = "province";
+    public final static String LOCATION_CITY = "city";
+    public final static String DIMENSION_INBOUND_ID = "dimension_inbound_id";
+    public final static String INBOUND_NAME = "inbound";
+    public final static String DIMENSION_EVENT_ID = "dimension_event_id";
+    public final static String EVENT_CATEGORY = "category";
+    public final static String EVENT_ACTION = "action";
+    public final static String DIMENSION_CURRENCY_TYPE_ID = "dimension_currency_type_id";
+    public final static String CURRENCY_TYPE = "currency_type";
+    public final static String DIMENSION_PAYMENT_TYPE_ID = "dimension_payment_type_id";
+    public final static String PAYMENT_TYPE = "payment_type";
 
     // other
     public static final String SEPARTION_COMMA = ",";
@@ -41,4 +53,28 @@ public class AEConstants {
     public final static String LOCATION = "location";
     public final static String COUNTRY_NAME = "country_name";
     public final static String PROVINCE_NAME = "province_name";
+
+    // mybatis column name
+    public final static String ACTIVE_USERS = "active_users";
+    public final static String NEW_USERS = "new_users";
+    public final static String TOTAL_USERS = "total_users";
+    public final static String ACTIVE_MEMBERS = "active_members";
+    public final static String NEW_MEMBERS = "new_members";
+    public final static String TOTAL_MEMBERS = "total_members";
+
+    // bucket name
+    public final static String BUCKET_USER_BEHAVIOR = "user_behavior";
+    public final static String BUCKET_BROWSER = "browser";
+    public final static String BUCKET_LOCATION = "location";
+    public final static String BUCKET_INBOUND = "inbound";
+    public final static String BUCKET_EVENT = "event";
+    public final static String BUCKET_ORDER = "order";
+
+    // metric name
+    public final static String METRIC_NEW_USER_SPEED_RATE = "new_user_speed_rate";
+    public final static String METRIC_ACTIVE_USER_SPEED_RATE = "active_user_speed_rate";
+    public final static String METRIC_TOTAL_USER_SPEED_RATE = "total_user_speed_rate";
+    public final static String METRIC_NEW_MEMBER_SPEED_RATE = "new_member_speed_rate";
+    public final static String METRIC_ACTIVE_MEMBER_SPEED_RATE = "active_member_speed_rate";
+    public final static String METRIC_TOTAL_MEMBER_SPEED_RATE = "total_member_speed_rate";
 }
